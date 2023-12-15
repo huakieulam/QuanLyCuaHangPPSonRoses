@@ -227,7 +227,7 @@
             this.txtNhapEmail.PlaceholderText = "";
             this.txtNhapEmail.SelectedText = "";
             this.txtNhapEmail.Size = new System.Drawing.Size(423, 48);
-            this.txtNhapEmail.TabIndex = 36;
+            this.txtNhapEmail.TabIndex = 1;
             // 
             // guna2Elipse2
             // 
@@ -269,7 +269,7 @@
             this.txtNhapMaXN.PlaceholderText = "";
             this.txtNhapMaXN.SelectedText = "";
             this.txtNhapMaXN.Size = new System.Drawing.Size(274, 48);
-            this.txtNhapMaXN.TabIndex = 37;
+            this.txtNhapMaXN.TabIndex = 2;
             // 
             // guna2Elipse9
             // 

@@ -43,12 +43,12 @@
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.rdbQuanLy.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdbQuanLy.CheckedState.InnerOffset = -4;
             this.rdbQuanLy.Font = new System.Drawing.Font("Sitka Text", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdbQuanLy.Location = new System.Drawing.Point(437, 150);
+            this.rdbQuanLy.Location = new System.Drawing.Point(437, 131);
             this.rdbQuanLy.Name = "rdbQuanLy";
             this.rdbQuanLy.Size = new System.Drawing.Size(167, 51);
             this.rdbQuanLy.TabIndex = 17;
@@ -87,14 +87,14 @@
             this.txtNhapMatKhau.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNhapMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtNhapMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapMatKhau.Location = new System.Drawing.Point(205, 280);
+            this.txtNhapMatKhau.Location = new System.Drawing.Point(205, 261);
             this.txtNhapMatKhau.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapMatKhau.Name = "txtNhapMatKhau";
             this.txtNhapMatKhau.PasswordChar = '\0';
             this.txtNhapMatKhau.PlaceholderText = "";
             this.txtNhapMatKhau.SelectedText = "";
             this.txtNhapMatKhau.Size = new System.Drawing.Size(423, 48);
-            this.txtNhapMatKhau.TabIndex = 13;
+            this.txtNhapMatKhau.TabIndex = 2;
             // 
             // txtNhapEmail
             // 
@@ -109,14 +109,14 @@
             this.txtNhapEmail.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNhapEmail.ForeColor = System.Drawing.Color.Black;
             this.txtNhapEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapEmail.Location = new System.Drawing.Point(205, 218);
+            this.txtNhapEmail.Location = new System.Drawing.Point(205, 199);
             this.txtNhapEmail.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapEmail.Name = "txtNhapEmail";
             this.txtNhapEmail.PasswordChar = '\0';
             this.txtNhapEmail.PlaceholderText = "";
             this.txtNhapEmail.SelectedText = "";
             this.txtNhapEmail.Size = new System.Drawing.Size(423, 48);
-            this.txtNhapEmail.TabIndex = 14;
+            this.txtNhapEmail.TabIndex = 1;
             // 
             // btnQuenMatKhau
             // 
@@ -135,10 +135,10 @@
             this.btnQuenMatKhau.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQuenMatKhau.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnQuenMatKhau.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnQuenMatKhau.Location = new System.Drawing.Point(32, 361);
+            this.btnQuenMatKhau.Location = new System.Drawing.Point(32, 342);
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
             this.btnQuenMatKhau.Size = new System.Drawing.Size(173, 46);
-            this.btnQuenMatKhau.TabIndex = 10;
+            this.btnQuenMatKhau.TabIndex = 4;
             this.btnQuenMatKhau.Text = "Quên mật khẩu";
             this.btnQuenMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQuenMatKhau.TextOffset = new System.Drawing.Point(5, -1);
@@ -162,10 +162,10 @@
             this.btnDangKy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangKy.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnDangKy.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangKy.Location = new System.Drawing.Point(470, 361);
+            this.btnDangKy.Location = new System.Drawing.Point(470, 342);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(158, 46);
-            this.btnDangKy.TabIndex = 11;
+            this.btnDangKy.TabIndex = 6;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangKy.TextOffset = new System.Drawing.Point(5, -1);
@@ -189,10 +189,10 @@
             this.btnDangNhap.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangNhap.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnDangNhap.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangNhap.Location = new System.Drawing.Point(250, 361);
+            this.btnDangNhap.Location = new System.Drawing.Point(250, 342);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(173, 46);
-            this.btnDangNhap.TabIndex = 12;
+            this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangNhap.TextOffset = new System.Drawing.Point(5, -1);
@@ -208,7 +208,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(33, 226);
+            this.label2.Location = new System.Drawing.Point(33, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 40);
             this.label2.TabIndex = 19;
@@ -224,7 +224,7 @@
             this.rdbNhanVien.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdbNhanVien.CheckedState.InnerOffset = -4;
             this.rdbNhanVien.Font = new System.Drawing.Font("Sitka Text", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdbNhanVien.Location = new System.Drawing.Point(276, 150);
+            this.rdbNhanVien.Location = new System.Drawing.Point(276, 131);
             this.rdbNhanVien.Name = "rdbNhanVien";
             this.rdbNhanVien.Size = new System.Drawing.Size(196, 51);
             this.rdbNhanVien.TabIndex = 16;
@@ -245,7 +245,7 @@
             this.rdbKhachHang.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdbKhachHang.CheckedState.InnerOffset = -4;
             this.rdbKhachHang.Font = new System.Drawing.Font("Sitka Text", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdbKhachHang.Location = new System.Drawing.Point(96, 150);
+            this.rdbKhachHang.Location = new System.Drawing.Point(96, 131);
             this.rdbKhachHang.Name = "rdbKhachHang";
             this.rdbKhachHang.Size = new System.Drawing.Size(218, 51);
             this.rdbKhachHang.TabIndex = 15;
@@ -266,7 +266,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(33, 288);
+            this.label1.Location = new System.Drawing.Point(33, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 40);
             this.label1.TabIndex = 18;
@@ -282,6 +282,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(663, 85);
             this.panel1.TabIndex = 20;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Appearance.Font = new System.Drawing.Font("Sitka Text", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThoat.Appearance.Options.UseFont = true;
+            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(519, 12);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(118, 41);
+            this.btnThoat.TabIndex = 3;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // guna2Button4
             // 
@@ -327,19 +340,6 @@
             this.guna2Elipse1.BorderRadius = 30;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Appearance.Font = new System.Drawing.Font("Sitka Text", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.Appearance.Options.UseFont = true;
-            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(519, 12);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(118, 41);
-            this.btnThoat.TabIndex = 21;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 15;
@@ -349,7 +349,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
-            this.ClientSize = new System.Drawing.Size(663, 441);
+            this.ClientSize = new System.Drawing.Size(663, 432);
             this.Controls.Add(this.rdbQuanLy);
             this.Controls.Add(this.txtNhapMatKhau);
             this.Controls.Add(this.txtNhapEmail);

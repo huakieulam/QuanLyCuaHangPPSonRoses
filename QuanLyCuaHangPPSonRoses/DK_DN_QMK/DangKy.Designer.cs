@@ -52,6 +52,9 @@
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNhapSDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Elipse10 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +71,7 @@
             this.txtNhapEmail.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNhapEmail.ForeColor = System.Drawing.Color.Black;
             this.txtNhapEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapEmail.Location = new System.Drawing.Point(204, 191);
+            this.txtNhapEmail.Location = new System.Drawing.Point(204, 253);
             this.txtNhapEmail.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapEmail.Name = "txtNhapEmail";
             this.txtNhapEmail.PasswordChar = '\0';
@@ -76,7 +79,7 @@
             this.txtNhapEmail.PlaceholderText = "";
             this.txtNhapEmail.SelectedText = "";
             this.txtNhapEmail.Size = new System.Drawing.Size(423, 48);
-            this.txtNhapEmail.TabIndex = 24;
+            this.txtNhapEmail.TabIndex = 3;
             // 
             // guna2Elipse9
             // 
@@ -88,7 +91,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(49, 323);
+            this.label4.Location = new System.Drawing.Point(49, 385);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(196, 40);
             this.label4.TabIndex = 29;
@@ -99,7 +102,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(49, 199);
+            this.label2.Location = new System.Drawing.Point(49, 261);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 40);
             this.label2.TabIndex = 31;
@@ -110,7 +113,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(49, 261);
+            this.label1.Location = new System.Drawing.Point(49, 323);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 40);
             this.label1.TabIndex = 28;
@@ -129,7 +132,7 @@
             this.txtNhapMaXN.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNhapMaXN.ForeColor = System.Drawing.Color.Black;
             this.txtNhapMaXN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapMaXN.Location = new System.Drawing.Point(204, 315);
+            this.txtNhapMaXN.Location = new System.Drawing.Point(204, 377);
             this.txtNhapMaXN.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapMaXN.Name = "txtNhapMaXN";
             this.txtNhapMaXN.PasswordChar = '\0';
@@ -137,7 +140,7 @@
             this.txtNhapMaXN.PlaceholderText = "";
             this.txtNhapMaXN.SelectedText = "";
             this.txtNhapMaXN.Size = new System.Drawing.Size(274, 48);
-            this.txtNhapMaXN.TabIndex = 26;
+            this.txtNhapMaXN.TabIndex = 5;
             // 
             // btnGuiMaXN
             // 
@@ -156,10 +159,10 @@
             this.btnGuiMaXN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuiMaXN.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnGuiMaXN.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnGuiMaXN.Location = new System.Drawing.Point(492, 317);
+            this.btnGuiMaXN.Location = new System.Drawing.Point(492, 379);
             this.btnGuiMaXN.Name = "btnGuiMaXN";
             this.btnGuiMaXN.Size = new System.Drawing.Size(135, 46);
-            this.btnGuiMaXN.TabIndex = 22;
+            this.btnGuiMaXN.TabIndex = 6;
             this.btnGuiMaXN.Text = "Gửi mã";
             this.btnGuiMaXN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuiMaXN.TextOffset = new System.Drawing.Point(5, -1);
@@ -194,7 +197,7 @@
             this.txtNhapMatKhau.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNhapMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtNhapMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapMatKhau.Location = new System.Drawing.Point(204, 253);
+            this.txtNhapMatKhau.Location = new System.Drawing.Point(204, 315);
             this.txtNhapMatKhau.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapMatKhau.Name = "txtNhapMatKhau";
             this.txtNhapMatKhau.PasswordChar = '\0';
@@ -202,7 +205,7 @@
             this.txtNhapMatKhau.PlaceholderText = "";
             this.txtNhapMatKhau.SelectedText = "";
             this.txtNhapMatKhau.Size = new System.Drawing.Size(423, 48);
-            this.txtNhapMatKhau.TabIndex = 27;
+            this.txtNhapMatKhau.TabIndex = 4;
             // 
             // txtNhapHoTen
             // 
@@ -225,7 +228,7 @@
             this.txtNhapHoTen.PlaceholderText = "";
             this.txtNhapHoTen.SelectedText = "";
             this.txtNhapHoTen.Size = new System.Drawing.Size(423, 48);
-            this.txtNhapHoTen.TabIndex = 25;
+            this.txtNhapHoTen.TabIndex = 1;
             // 
             // btnDangKy
             // 
@@ -244,10 +247,10 @@
             this.btnDangKy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangKy.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnDangKy.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangKy.Location = new System.Drawing.Point(261, 398);
+            this.btnDangKy.Location = new System.Drawing.Point(261, 460);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(133, 48);
-            this.btnDangKy.TabIndex = 23;
+            this.btnDangKy.TabIndex = 7;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangKy.TextOffset = new System.Drawing.Point(5, -1);
@@ -261,7 +264,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 85);
+            this.panel1.Size = new System.Drawing.Size(677, 85);
             this.panel1.TabIndex = 32;
             // 
             // btnThoat
@@ -345,11 +348,52 @@
             this.guna2Elipse1.BorderRadius = 30;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(49, 199);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(204, 40);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Số điện thoại";
+            // 
+            // txtNhapSDT
+            // 
+            this.txtNhapSDT.BorderRadius = 15;
+            this.txtNhapSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNhapSDT.DefaultText = "";
+            this.txtNhapSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNhapSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNhapSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNhapSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNhapSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNhapSDT.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtNhapSDT.ForeColor = System.Drawing.Color.Black;
+            this.txtNhapSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNhapSDT.Location = new System.Drawing.Point(204, 191);
+            this.txtNhapSDT.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtNhapSDT.Name = "txtNhapSDT";
+            this.txtNhapSDT.PasswordChar = '\0';
+            this.txtNhapSDT.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtNhapSDT.PlaceholderText = "";
+            this.txtNhapSDT.SelectedText = "";
+            this.txtNhapSDT.Size = new System.Drawing.Size(423, 48);
+            this.txtNhapSDT.TabIndex = 2;
+            // 
+            // guna2Elipse10
+            // 
+            this.guna2Elipse10.BorderRadius = 10;
+            this.guna2Elipse10.TargetControl = this.label5;
+            // 
             // DangKy
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
-            this.ClientSize = new System.Drawing.Size(672, 473);
+            this.ClientSize = new System.Drawing.Size(677, 537);
+            this.Controls.Add(this.txtNhapSDT);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNhapEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -395,5 +439,8 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2TextBox txtNhapSDT;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse10;
     }
 }
