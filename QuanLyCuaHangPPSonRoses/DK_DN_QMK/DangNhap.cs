@@ -33,7 +33,7 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
