@@ -37,7 +37,10 @@
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnThemSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.uC_SP_thongtinsp1 = new QuanLyCuaHangPPSonRoses.ChucNang.UC_SP_thongtinsp();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -126,6 +129,7 @@
             this.btnThemSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThemSanPham.TextOffset = new System.Drawing.Point(5, -1);
             this.btnThemSanPham.UseTransparentBackground = true;
+            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
             // 
             // guna2Separator1
             // 
@@ -135,12 +139,29 @@
             this.guna2Separator1.Size = new System.Drawing.Size(982, 10);
             this.guna2Separator1.TabIndex = 6;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.uC_SP_thongtinsp1);
+            this.panel2.Location = new System.Drawing.Point(3, 185);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1028, 378);
+            this.panel2.TabIndex = 7;
+            // 
+            // uC_SP_thongtinsp1
+            // 
+            this.uC_SP_thongtinsp1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
+            this.uC_SP_thongtinsp1.Location = new System.Drawing.Point(57, 42);
+            this.uC_SP_thongtinsp1.Name = "uC_SP_thongtinsp1";
+            this.uC_SP_thongtinsp1.Size = new System.Drawing.Size(256, 264);
+            this.uC_SP_thongtinsp1.TabIndex = 0;
+            // 
             // UC_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.btnThemSanPham);
             this.Controls.Add(this.txtTimKiem);
@@ -149,6 +170,7 @@
             this.Size = new System.Drawing.Size(1034, 574);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -162,5 +184,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2Button btnThemSanPham;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private System.Windows.Forms.Panel panel2;
+        private UC_SP_thongtinsp uC_SP_thongtinsp1;
     }
 }
