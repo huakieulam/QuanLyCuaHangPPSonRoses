@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHangPPSonRoses.ChucNang
 {
-    public partial class UC_SanPham : UserControl
+    public partial class UC_SP_thongtinsp : UserControl
     {
-        public UC_SanPham()
+        public UC_SP_thongtinsp()
         {
             InitializeComponent();
-        }
-
-        private void btnThemSanPham_Click(object sender, EventArgs e)
-        {
-            ThemSanPham themSanPham = new ThemSanPham();
-            themSanPham.Show();
         }
     }
 }
