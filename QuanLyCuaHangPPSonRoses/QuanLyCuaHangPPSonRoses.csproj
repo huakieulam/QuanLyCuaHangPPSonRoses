@@ -164,12 +164,14 @@
     <Compile Include="DK_DN_QMK\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="DK_DN_QMK\KetNoiDuLieu.cs" />
     <Compile Include="DK_DN_QMK\QuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DK_DN_QMK\QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="DK_DN_QMK\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControl1.cs">
