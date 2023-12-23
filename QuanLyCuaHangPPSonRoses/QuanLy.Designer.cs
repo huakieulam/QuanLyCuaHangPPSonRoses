@@ -39,12 +39,14 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.xtraUserControl1 = new DevExpress.XtraEditors.XtraUserControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
+            this.panel1.Controls.Add(this.btnDangXuat);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.btnQLTaiKhoan);
             this.panel1.Controls.Add(this.btnThongKe);
@@ -209,10 +211,40 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(216, 12);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(219, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(692, 566);
+            this.panel2.Size = new System.Drawing.Size(701, 590);
             this.panel2.TabIndex = 6;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.BorderRadius = 10;
+            this.btnDangXuat.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDangXuat.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.FillColor = System.Drawing.Color.White;
+            this.btnDangXuat.Font = new System.Drawing.Font("Sitka Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.Black;
+            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
+            this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnDangXuat.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDangXuat.Location = new System.Drawing.Point(33, 518);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(152, 45);
+            this.btnDangXuat.TabIndex = 3;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.TextOffset = new System.Drawing.Point(5, -1);
+            this.btnDangXuat.UseTransparentBackground = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // QuanLy
             // 
@@ -226,6 +258,7 @@
             this.Name = "QuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLy";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.QuanLy_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -243,5 +276,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private DevExpress.XtraEditors.XtraUserControl xtraUserControl1;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
     }
 }

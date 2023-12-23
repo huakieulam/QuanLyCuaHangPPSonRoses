@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +18,48 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
             InitializeComponent();
         }
+        private string ma;
+        private string ten;
+        private int sl;
+        private string phanloai;
+        private decimal gia;
+        private Image hinhanh;
+
+        public string MASP
+        {
+            get { return ma; }
+            set { ma = value; lblMa.Text = value; }
+        }
+
+        public string TENSP
+        {
+            get { return ten; }
+            set { ten = value; lblTen.Text = value; }
+        }
+
+        public int SOLUONG
+        {
+            get { return sl; }
+            set { sl = value; lblSL.Text = value.ToString(); }
+        }
+
+        public string PHANLOAI
+        {
+            get { return phanloai; }
+            set { phanloai = value; lblPhanLoai.Text = value; }
+        }
+
+        public decimal GIA
+        {
+            get { return gia; }
+            set { gia = value; lblGia.Text = value.ToString(); }
+        }
+
+        public Image HINHANH
+        {
+            get { return hinhanh; }
+            set { hinhanh = value; picSP.Image = value; }
+        }
+
     }
 }

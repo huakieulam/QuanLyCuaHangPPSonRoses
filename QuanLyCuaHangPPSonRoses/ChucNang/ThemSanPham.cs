@@ -55,6 +55,8 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
                 connection.Close();
             }
+            UC_SanPham uC_SanPham = new UC_SanPham();
+            uC_SanPham.Show();
         }
        
         private void btnThemHinhAnh_Click(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
         private bool ktDienND()
         {
-            if (string.IsNullOrEmpty(txtMaSP.Text) || string.IsNullOrEmpty(txtTenSP.Text) || string.IsNullOrEmpty(txtSL.Text) || string.IsNullOrEmpty(cmbPhanLoai.Text) || string.IsNullOrEmpty(txtGia.Text) || picSP.Image == null)
+            if (txtMaSP.Text==null || txtTenSP.Text==null || txtSL.Text==null || cmbPhanLoai.Text==null || txtGia.Text==null || picSP.Image == null)
             {
                 MessageBox.Show("Hãy nhập đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
