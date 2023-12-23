@@ -166,7 +166,7 @@
             this.btnGuiMaXN.Text = "Gửi mã";
             this.btnGuiMaXN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuiMaXN.TextOffset = new System.Drawing.Point(5, -1);
-            this.btnGuiMaXN.UseTransparentBackground = true;
+            this.btnGuiMaXN.Click += new System.EventHandler(this.btnGuiMaXN_Click);
             // 
             // guna2Elipse8
             // 
@@ -254,7 +254,7 @@
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangKy.TextOffset = new System.Drawing.Point(5, -1);
-            this.btnDangKy.UseTransparentBackground = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // panel1
             // 

@@ -84,17 +84,18 @@
             this.txtNhapMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNhapMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNhapMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapMatKhau.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtNhapMatKhau.Font = new System.Drawing.Font("Sitka Small", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNhapMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtNhapMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNhapMatKhau.Location = new System.Drawing.Point(205, 261);
             this.txtNhapMatKhau.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapMatKhau.Name = "txtNhapMatKhau";
-            this.txtNhapMatKhau.PasswordChar = '\0';
+            this.txtNhapMatKhau.PasswordChar = '●';
             this.txtNhapMatKhau.PlaceholderText = "";
             this.txtNhapMatKhau.SelectedText = "";
             this.txtNhapMatKhau.Size = new System.Drawing.Size(423, 48);
             this.txtNhapMatKhau.TabIndex = 2;
+            this.txtNhapMatKhau.UseSystemPasswordChar = true;
             // 
             // txtNhapEmail
             // 
@@ -197,6 +198,7 @@
             this.btnDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangNhap.TextOffset = new System.Drawing.Point(5, -1);
             this.btnDangNhap.UseTransparentBackground = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // guna2Elipse7
             // 
@@ -255,6 +257,7 @@
             this.rdbKhachHang.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdbKhachHang.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rdbKhachHang.UseVisualStyleBackColor = false;
+            this.rdbKhachHang.CheckedChanged += new System.EventHandler(this.rdbKhachHang_CheckedChanged);
             // 
             // guna2Elipse6
             // 
