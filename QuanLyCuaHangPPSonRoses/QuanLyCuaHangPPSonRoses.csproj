@@ -164,22 +164,17 @@
     <Compile Include="DK_DN_QMK\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="DK_DN_QMK\KetNoiDuLieu.cs" />
+    <Compile Include="..\..\Đồ án CNPM\KetNoiDuLieu.cs">
+      <Link>DK_DN_QMK\KetNoiDuLieu.cs</Link>
+    </Compile>
     <Compile Include="DK_DN_QMK\QuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DK_DN_QMK\QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="DK_DN_QMK\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ChucNang\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
