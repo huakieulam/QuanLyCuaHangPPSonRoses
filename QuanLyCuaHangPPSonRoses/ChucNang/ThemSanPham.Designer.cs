@@ -31,23 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemSanPham));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picSP = new System.Windows.Forms.PictureBox();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemHinhAnh = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThemSP = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXacNhan = new Guna.UI2.WinForms.Guna2Button();
             this.cmbPhanLoai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSL = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.picSP = new System.Windows.Forms.PictureBox();
-            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSP)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.panel1.Controls.Add(this.picSP);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnThemHinhAnh);
-            this.panel1.Controls.Add(this.btnThemSP);
+            this.panel1.Controls.Add(this.btnXacNhan);
             this.panel1.Controls.Add(this.cmbPhanLoai);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -73,6 +73,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 548);
             this.panel1.TabIndex = 0;
+            // 
+            // picSP
+            // 
+            this.picSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSP.Location = new System.Drawing.Point(57, 109);
+            this.picSP.Name = "picSP";
+            this.picSP.Size = new System.Drawing.Size(273, 259);
+            this.picSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSP.TabIndex = 23;
+            this.picSP.TabStop = false;
             // 
             // btnThoat
             // 
@@ -130,32 +140,32 @@
             this.btnThemHinhAnh.UseTransparentBackground = true;
             this.btnThemHinhAnh.Click += new System.EventHandler(this.btnThemHinhAnh_Click);
             // 
-            // btnThemSP
+            // btnXacNhan
             // 
-            this.btnThemSP.BackColor = System.Drawing.Color.Transparent;
-            this.btnThemSP.BorderRadius = 10;
-            this.btnThemSP.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnThemSP.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnThemSP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemSP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThemSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemSP.FillColor = System.Drawing.Color.HotPink;
-            this.btnThemSP.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemSP.ForeColor = System.Drawing.Color.White;
-            this.btnThemSP.Image = ((System.Drawing.Image)(resources.GetObject("btnThemSP.Image")));
-            this.btnThemSP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThemSP.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnThemSP.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThemSP.Location = new System.Drawing.Point(507, 489);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(137, 47);
-            this.btnThemSP.TabIndex = 6;
-            this.btnThemSP.Text = "Thêm";
-            this.btnThemSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThemSP.TextOffset = new System.Drawing.Point(5, -1);
-            this.btnThemSP.UseTransparentBackground = true;
-            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
+            this.btnXacNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnXacNhan.BorderRadius = 10;
+            this.btnXacNhan.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnXacNhan.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnXacNhan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXacNhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXacNhan.FillColor = System.Drawing.Color.HotPink;
+            this.btnXacNhan.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXacNhan.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhan.Image = ((System.Drawing.Image)(resources.GetObject("btnXacNhan.Image")));
+            this.btnXacNhan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXacNhan.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnXacNhan.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnXacNhan.Location = new System.Drawing.Point(489, 486);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(155, 48);
+            this.btnXacNhan.TabIndex = 6;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXacNhan.TextOffset = new System.Drawing.Point(5, -1);
+            this.btnXacNhan.UseTransparentBackground = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
             // cmbPhanLoai
             // 
@@ -166,7 +176,7 @@
             this.cmbPhanLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPhanLoai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbPhanLoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPhanLoai.Font = new System.Drawing.Font("Sitka Small", 10F);
+            this.cmbPhanLoai.Font = new System.Drawing.Font("Times New Roman", 16F);
             this.cmbPhanLoai.ForeColor = System.Drawing.Color.Black;
             this.cmbPhanLoai.ItemHeight = 30;
             this.cmbPhanLoai.Items.AddRange(new object[] {
@@ -186,6 +196,16 @@
             this.label4.Size = new System.Drawing.Size(182, 35);
             this.label4.TabIndex = 20;
             this.label4.Text = "Tên sản phẩm";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(408, 382);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 35);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Giá";
             // 
             // label5
             // 
@@ -217,6 +237,30 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Mã sản phẩm";
             // 
+            // txtGia
+            // 
+            this.txtGia.BorderColor = System.Drawing.Color.Black;
+            this.txtGia.BorderRadius = 10;
+            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGia.DefaultText = "";
+            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 16F);
+            this.txtGia.ForeColor = System.Drawing.Color.Black;
+            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGia.Location = new System.Drawing.Point(410, 418);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.PasswordChar = '\0';
+            this.txtGia.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtGia.PlaceholderText = "";
+            this.txtGia.SelectedText = "";
+            this.txtGia.Size = new System.Drawing.Size(316, 48);
+            this.txtGia.TabIndex = 5;
+            // 
             // txtSL
             // 
             this.txtSL.BorderColor = System.Drawing.Color.Black;
@@ -228,7 +272,7 @@
             this.txtSL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSL.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSL.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSL.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtSL.Font = new System.Drawing.Font("Times New Roman", 16F);
             this.txtSL.ForeColor = System.Drawing.Color.Black;
             this.txtSL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSL.Location = new System.Drawing.Point(410, 240);
@@ -252,7 +296,7 @@
             this.txtTenSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenSP.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenSP.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenSP.ForeColor = System.Drawing.Color.Black;
             this.txtTenSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenSP.Location = new System.Drawing.Point(410, 145);
@@ -277,7 +321,7 @@
             this.txtMaSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaSP.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSP.ForeColor = System.Drawing.Color.Black;
             this.txtMaSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaSP.Location = new System.Drawing.Point(410, 54);
@@ -304,50 +348,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // picSP
-            // 
-            this.picSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picSP.Location = new System.Drawing.Point(57, 109);
-            this.picSP.Name = "picSP";
-            this.picSP.Size = new System.Drawing.Size(273, 259);
-            this.picSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSP.TabIndex = 23;
-            this.picSP.TabStop = false;
-            // 
-            // txtGia
-            // 
-            this.txtGia.BorderColor = System.Drawing.Color.Black;
-            this.txtGia.BorderRadius = 10;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.DefaultText = "";
-            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtGia.ForeColor = System.Drawing.Color.Black;
-            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Location = new System.Drawing.Point(410, 418);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.PasswordChar = '\0';
-            this.txtGia.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtGia.PlaceholderText = "";
-            this.txtGia.SelectedText = "";
-            this.txtGia.Size = new System.Drawing.Size(316, 48);
-            this.txtGia.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(408, 382);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 35);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Giá";
-            // 
             // ThemSanPham
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -370,7 +370,7 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private Guna.UI2.WinForms.Guna2Button btnThemSP;
+        private Guna.UI2.WinForms.Guna2Button btnXacNhan;
         private Guna.UI2.WinForms.Guna2ComboBox cmbPhanLoai;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

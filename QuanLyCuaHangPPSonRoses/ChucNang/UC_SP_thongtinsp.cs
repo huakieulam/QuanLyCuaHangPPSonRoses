@@ -61,5 +61,31 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             set { hinhanh = value; picSP.Image = value; }
         }
 
+        
+        public event EventHandler XoaSanPhamClicked;
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (XoaSanPhamClicked != null)
+            {
+                XoaSanPhamClicked(this, EventArgs.Empty);
+            }
+        }
+
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            ThemSanPham themSanPham = new ThemSanPham();
+            themSanPham.MASP = MASP;
+            themSanPham.TENSP = TENSP;
+            themSanPham.SOLUONG = SOLUONG;
+            themSanPham.PHANLOAI = PHANLOAI;
+            themSanPham.GIA = GIA;
+            themSanPham.HINHANH = HINHANH;
+
+            themSanPham.ReadOnlyMaSP = true;
+
+            themSanPham.Show();
+        }
     }
+    
 }

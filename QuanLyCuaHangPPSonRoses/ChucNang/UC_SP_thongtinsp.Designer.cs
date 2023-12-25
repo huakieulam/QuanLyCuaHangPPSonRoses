@@ -98,6 +98,7 @@
             this.btnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnXoa.TextOffset = new System.Drawing.Point(5, -1);
             this.btnXoa.UseTransparentBackground = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnChinhSua
             // 
@@ -122,11 +123,12 @@
             this.btnChinhSua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnChinhSua.TextOffset = new System.Drawing.Point(5, -1);
             this.btnChinhSua.UseTransparentBackground = true;
+            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
             // 
             // lblGia
             // 
             this.lblGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGia.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblGia.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGia.Location = new System.Drawing.Point(15, 276);
             this.lblGia.Name = "lblGia";
             this.lblGia.Size = new System.Drawing.Size(237, 39);
@@ -137,7 +139,7 @@
             // lblPhanLoai
             // 
             this.lblPhanLoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPhanLoai.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblPhanLoai.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhanLoai.Location = new System.Drawing.Point(15, 221);
             this.lblPhanLoai.Name = "lblPhanLoai";
             this.lblPhanLoai.Size = new System.Drawing.Size(237, 39);
@@ -148,10 +150,10 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(74, 171);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 171);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 33);
+            this.label6.Size = new System.Drawing.Size(144, 33);
             this.label6.TabIndex = 1;
             this.label6.Text = "Số lượng";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,10 +161,10 @@
             // lblSL
             // 
             this.lblSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSL.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSL.Location = new System.Drawing.Point(192, 171);
+            this.lblSL.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSL.Location = new System.Drawing.Point(155, 171);
             this.lblSL.Name = "lblSL";
-            this.lblSL.Size = new System.Drawing.Size(60, 33);
+            this.lblSL.Size = new System.Drawing.Size(159, 33);
             this.lblSL.TabIndex = 1;
             this.lblSL.Text = "...";
             this.lblSL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,7 +172,7 @@
             // lblTen
             // 
             this.lblTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTen.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTen.Location = new System.Drawing.Point(119, 124);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(195, 33);
@@ -181,7 +183,7 @@
             // lblMa
             // 
             this.lblMa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMa.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblMa.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMa.Location = new System.Drawing.Point(15, 124);
             this.lblMa.Name = "lblMa";
             this.lblMa.Size = new System.Drawing.Size(98, 33);
