@@ -38,6 +38,7 @@
             this.btnThemSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnLamMoiDL = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,11 +88,11 @@
             this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTimKiem.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTimKiem.IconLeft")));
-            this.txtTimKiem.Location = new System.Drawing.Point(639, 111);
+            this.txtTimKiem.Location = new System.Drawing.Point(567, 111);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
@@ -121,9 +122,9 @@
             this.btnThemSanPham.ImageSize = new System.Drawing.Size(25, 25);
             this.btnThemSanPham.Location = new System.Drawing.Point(19, 115);
             this.btnThemSanPham.Name = "btnThemSanPham";
-            this.btnThemSanPham.Size = new System.Drawing.Size(321, 48);
+            this.btnThemSanPham.Size = new System.Drawing.Size(181, 48);
             this.btnThemSanPham.TabIndex = 5;
-            this.btnThemSanPham.Text = "Thêm sản phẩm";
+            this.btnThemSanPham.Text = "Thêm";
             this.btnThemSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThemSanPham.TextOffset = new System.Drawing.Point(5, -1);
             this.btnThemSanPham.UseTransparentBackground = true;
@@ -151,12 +152,39 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(855, 389);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
+            // btnLamMoiDL
+            // 
+            this.btnLamMoiDL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLamMoiDL.BackColor = System.Drawing.Color.Transparent;
+            this.btnLamMoiDL.BorderRadius = 10;
+            this.btnLamMoiDL.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnLamMoiDL.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnLamMoiDL.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnLamMoiDL.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLamMoiDL.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLamMoiDL.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLamMoiDL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLamMoiDL.FillColor = System.Drawing.Color.White;
+            this.btnLamMoiDL.Font = new System.Drawing.Font("Sitka Text", 14F, System.Drawing.FontStyle.Bold);
+            this.btnLamMoiDL.ForeColor = System.Drawing.Color.Black;
+            this.btnLamMoiDL.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoiDL.Image")));
+            this.btnLamMoiDL.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnLamMoiDL.Location = new System.Drawing.Point(937, 111);
+            this.btnLamMoiDL.Name = "btnLamMoiDL";
+            this.btnLamMoiDL.Size = new System.Drawing.Size(56, 48);
+            this.btnLamMoiDL.TabIndex = 8;
+            this.btnLamMoiDL.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLamMoiDL.TextOffset = new System.Drawing.Point(5, -1);
+            this.btnLamMoiDL.UseTransparentBackground = true;
+            this.btnLamMoiDL.Click += new System.EventHandler(this.btnLamMoiDL_Click);
+            // 
             // UC_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnLamMoiDL);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.btnThemSanPham);
@@ -180,5 +208,6 @@
         private Guna.UI2.WinForms.Guna2Button btnThemSanPham;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnLamMoiDL;
     }
 }
