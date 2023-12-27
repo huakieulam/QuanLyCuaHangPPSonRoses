@@ -21,7 +21,6 @@ namespace QuanLyCuaHangPPSonRoses
 
             Application.Run(new DangNhap());
 
-            Application.Run(new KhachHang());
 
         }
     }
