@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCuaHangPPSonRoses
 {
-    partial class QuanLy
+    partial class KhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLy));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDatHang = new Guna.UI2.WinForms.Guna2Button();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.xtraUserControl1 = new DevExpress.XtraEditors.XtraUserControl();
@@ -46,17 +45,44 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
+            this.panel1.Controls.Add(this.btnDatHang);
             this.panel1.Controls.Add(this.btnDangXuat);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.btnQLTaiKhoan);
-            this.panel1.Controls.Add(this.btnThongKe);
-            this.panel1.Controls.Add(this.btnSanPham);
             this.panel1.Controls.Add(this.btnTrangChu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(219, 590);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 10;
+            // 
+            // btnDatHang
+            // 
+            this.btnDatHang.BackColor = System.Drawing.Color.Transparent;
+            this.btnDatHang.BorderRadius = 15;
+            this.btnDatHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDatHang.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDatHang.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDatHang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDatHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDatHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDatHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDatHang.FillColor = System.Drawing.Color.HotPink;
+            this.btnDatHang.Font = new System.Drawing.Font("Sitka Text", 14F, System.Drawing.FontStyle.Bold);
+            this.btnDatHang.ForeColor = System.Drawing.Color.White;
+            this.btnDatHang.Image = ((System.Drawing.Image)(resources.GetObject("btnDatHang.Image")));
+            this.btnDatHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDatHang.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnDatHang.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDatHang.Location = new System.Drawing.Point(24, 172);
+            this.btnDatHang.Name = "btnDatHang";
+            this.btnDatHang.Size = new System.Drawing.Size(219, 41);
+            this.btnDatHang.TabIndex = 4;
+            this.btnDatHang.Text = "Đặt hàng";
+            this.btnDatHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDatHang.TextOffset = new System.Drawing.Point(5, -1);
+            this.btnDatHang.UseTransparentBackground = true;
+            this.btnDatHang.Click += new System.EventHandler(this.btnDatHang_Click);
             // 
             // btnDangXuat
             // 
@@ -85,7 +111,6 @@
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.TextOffset = new System.Drawing.Point(5, -1);
             this.btnDangXuat.UseTransparentBackground = true;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // guna2Button1
             // 
@@ -131,7 +156,7 @@
             this.btnQLTaiKhoan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLTaiKhoan.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnQLTaiKhoan.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnQLTaiKhoan.Location = new System.Drawing.Point(24, 289);
+            this.btnQLTaiKhoan.Location = new System.Drawing.Point(24, 242);
             this.btnQLTaiKhoan.Name = "btnQLTaiKhoan";
             this.btnQLTaiKhoan.Size = new System.Drawing.Size(219, 41);
             this.btnQLTaiKhoan.TabIndex = 1;
@@ -140,62 +165,6 @@
             this.btnQLTaiKhoan.TextOffset = new System.Drawing.Point(5, -1);
             this.btnQLTaiKhoan.UseTransparentBackground = true;
             this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click);
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.Transparent;
-            this.btnThongKe.BorderRadius = 15;
-            this.btnThongKe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnThongKe.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnThongKe.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThongKe.FillColor = System.Drawing.Color.HotPink;
-            this.btnThongKe.Font = new System.Drawing.Font("Sitka Text", 14F, System.Drawing.FontStyle.Bold);
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
-            this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongKe.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnThongKe.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThongKe.Location = new System.Drawing.Point(24, 228);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(219, 41);
-            this.btnThongKe.TabIndex = 1;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongKe.TextOffset = new System.Drawing.Point(5, -1);
-            this.btnThongKe.UseTransparentBackground = true;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // btnSanPham
-            // 
-            this.btnSanPham.BackColor = System.Drawing.Color.Transparent;
-            this.btnSanPham.BorderRadius = 15;
-            this.btnSanPham.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnSanPham.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnSanPham.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSanPham.FillColor = System.Drawing.Color.HotPink;
-            this.btnSanPham.Font = new System.Drawing.Font("Sitka Text", 14F, System.Drawing.FontStyle.Bold);
-            this.btnSanPham.ForeColor = System.Drawing.Color.White;
-            this.btnSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnSanPham.Image")));
-            this.btnSanPham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSanPham.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnSanPham.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSanPham.Location = new System.Drawing.Point(24, 163);
-            this.btnSanPham.Name = "btnSanPham";
-            this.btnSanPham.Size = new System.Drawing.Size(219, 41);
-            this.btnSanPham.TabIndex = 1;
-            this.btnSanPham.Text = "Sản phẩm";
-            this.btnSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSanPham.TextOffset = new System.Drawing.Point(5, -1);
-            this.btnSanPham.UseTransparentBackground = true;
-            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // btnTrangChu
             // 
@@ -224,7 +193,6 @@
             this.btnTrangChu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTrangChu.TextOffset = new System.Drawing.Point(5, -1);
             this.btnTrangChu.UseTransparentBackground = true;
-            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // guna2Elipse1
             // 
@@ -233,33 +201,33 @@
             // 
             // xtraUserControl1
             // 
-            this.xtraUserControl1.Location = new System.Drawing.Point(573, 289);
+            this.xtraUserControl1.Location = new System.Drawing.Point(703, 278);
             this.xtraUserControl1.Name = "xtraUserControl1";
             this.xtraUserControl1.Size = new System.Drawing.Size(150, 150);
-            this.xtraUserControl1.TabIndex = 5;
+            this.xtraUserControl1.TabIndex = 11;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(219, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(701, 590);
-            this.panel2.TabIndex = 6;
+            this.panel2.TabIndex = 12;
             // 
-            // QuanLy
+            // KhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(920, 590);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.xtraUserControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "QuanLy";
+            this.Name = "KhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuanLy";
+            this.Text = "KhachHang";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.QuanLy_Load);
+            this.Load += new System.EventHandler(this.KhachHang_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -268,14 +236,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button btnDatHang;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnQLTaiKhoan;
-        private Guna.UI2.WinForms.Guna2Button btnThongKe;
-        private Guna.UI2.WinForms.Guna2Button btnSanPham;
         private Guna.UI2.WinForms.Guna2Button btnTrangChu;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private DevExpress.XtraEditors.XtraUserControl xtraUserControl1;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
     }
 }
