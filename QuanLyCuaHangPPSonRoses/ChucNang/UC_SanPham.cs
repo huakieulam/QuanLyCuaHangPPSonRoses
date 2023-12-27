@@ -78,7 +78,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             foreach (UC_SP_thongtinsp sanPham in danhSachSanPham)
             {
                 sanPham.XoaSanPhamClicked += XoaSanPham_Clicked;
-
+                sanPham.ChinhSuaSanPhamClicked += ChinhSuaSanPham_Clicked;
                 flowLayoutPanel1.Controls.Add(sanPham);
             }
             
@@ -109,6 +109,22 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
 
             HienThiSP();
+        }
+        private void ChinhSuaSanPham_Clicked(object sender, EventArgs e)
+        {
+            UC_SP_thongtinsp sanPham = sender as UC_SP_thongtinsp;
+
+            ThemSanPham chinhSuaSanPham = new ThemSanPham();
+            chinhSuaSanPham.MASP = sanPham.MASP;
+            chinhSuaSanPham.TENSP = sanPham.TENSP;
+            chinhSuaSanPham.SOLUONG = sanPham.SOLUONG;
+            chinhSuaSanPham.PHANLOAI = sanPham.PHANLOAI;
+            chinhSuaSanPham.GIA = sanPham.GIA;
+            chinhSuaSanPham.HINHANH = sanPham.HINHANH;
+
+            chinhSuaSanPham.ReadOnlyMaSP = true;
+
+            chinhSuaSanPham.Show();
         }
     }
 }
