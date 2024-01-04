@@ -39,5 +39,12 @@ namespace QuanLyCuaHangPPSonRoses
             panel2.Controls.Add(uc_QLTaiKhoan);
             uc_QLTaiKhoan.Dock = DockStyle.Fill;
         }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(uc_TrangChu);
+            uc_TrangChu.Dock = DockStyle.Fill;
+        }
     }
 }

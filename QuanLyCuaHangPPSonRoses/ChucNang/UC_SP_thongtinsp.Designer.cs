@@ -173,9 +173,9 @@
             // 
             this.lblTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTen.Location = new System.Drawing.Point(119, 124);
+            this.lblTen.Location = new System.Drawing.Point(177, 124);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(195, 33);
+            this.lblTen.Size = new System.Drawing.Size(137, 33);
             this.lblTen.TabIndex = 1;
             this.lblTen.Text = "Tên màu";
             this.lblTen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,17 +186,18 @@
             this.lblMa.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMa.Location = new System.Drawing.Point(15, 124);
             this.lblMa.Name = "lblMa";
-            this.lblMa.Size = new System.Drawing.Size(98, 33);
+            this.lblMa.Size = new System.Drawing.Size(156, 33);
             this.lblMa.TabIndex = 1;
             this.lblMa.Text = "Mã màu";
             this.lblMa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picSP
             // 
-            this.picSP.Location = new System.Drawing.Point(15, 16);
+            this.picSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSP.Location = new System.Drawing.Point(86, 16);
             this.picSP.Name = "picSP";
-            this.picSP.Size = new System.Drawing.Size(299, 91);
-            this.picSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSP.Size = new System.Drawing.Size(153, 93);
+            this.picSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picSP.TabIndex = 0;
             this.picSP.TabStop = false;
             // 

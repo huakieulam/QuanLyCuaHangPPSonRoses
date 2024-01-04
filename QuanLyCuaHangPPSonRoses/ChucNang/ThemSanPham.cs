@@ -19,11 +19,10 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         NpgsqlConnection connection;
         public ThemSanPham()
         {
-            InitializeComponent();
             connection = new NpgsqlConnection();
             connection.ConnectionString = @"Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
+            InitializeComponent();
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,9 +32,13 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
             if (ktDienND())
             {
+                Image temp = new Bitmap(picSP.Image);
+
                 MemoryStream ms = new MemoryStream();
-                picSP.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                byte[] imageData = ms.GetBuffer();
+               
+                temp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+                imageByteArray= ms.ToArray();
 
                 connection.Open();
 
@@ -61,7 +64,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                             updateCommand.Parameters.AddWithValue("@sl", int.Parse(txtSL.Text));
                             updateCommand.Parameters.AddWithValue("@loaisp", cmbPhanLoai.SelectedItem.ToString());
                             updateCommand.Parameters.AddWithValue("@gia", Int64.Parse(txtGia.Text));
-                            updateCommand.Parameters.AddWithValue("@hinhanh", imageData);
+                            updateCommand.Parameters.AddWithValue("@hinhanh", imageByteArray);
 
                             updateCommand.ExecuteNonQuery();
 
@@ -80,7 +83,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                             insertCommand.Parameters.AddWithValue("@sl", int.Parse(txtSL.Text));
                             insertCommand.Parameters.AddWithValue("@loaisp", cmbPhanLoai.SelectedItem.ToString());
                             insertCommand.Parameters.AddWithValue("@gia", Int64.Parse(txtGia.Text));
-                            insertCommand.Parameters.AddWithValue("@hinhanh", imageData);
+                            insertCommand.Parameters.AddWithValue("@hinhanh", imageByteArray);
 
                             insertCommand.ExecuteNonQuery();
 
@@ -92,15 +95,18 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             }
         
         }
-    
-       
+
+        string filepath;
+        Byte[] imageByteArray;
         private void btnThemHinhAnh_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Hình ảnh (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                picSP.Image = Image.FromFile(openFileDialog1.FileName);
+                //picSP.Image = Image.FromFile(openFileDialog1.FileName);
+                filepath = openFileDialog1.FileName;
+                picSP.Image = new Bitmap(filepath);
             }
         }
 
@@ -114,27 +120,6 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
             return true;
         }
-        /*private bool ktMaSP(string maSP)
-        {
-            bool trungMaSP = false;
-
-            using (NpgsqlCommand command = new NpgsqlCommand("SELECT COUNT(*) FROM sanpham WHERE masp = @masp", connection))
-            {
-                command.Parameters.AddWithValue("@masp", maSP);
-                connection.Open();
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-
-                if (count > 0)
-                {
-                    trungMaSP = true;
-                }
-            }
-
-            return trungMaSP;
-        }
-*/
-
 
         public string MASP
         {

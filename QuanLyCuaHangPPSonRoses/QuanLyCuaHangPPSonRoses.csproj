@@ -112,6 +112,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChucNang\DanhSachDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\DanhSachDonHang.Designer.cs">
+      <DependentUpon>DanhSachDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\ThemSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="ChucNang\TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChucNang\UC_DanhSachDonHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChucNang\UC_DanhSachDonHang.Designer.cs">
+      <DependentUpon>UC_DanhSachDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang\UC_DatHang.cs">
       <SubType>UserControl</SubType>
@@ -210,11 +222,17 @@
     <Compile Include="QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChucNang\DanhSachDonHang.resx">
+      <DependentUpon>DanhSachDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\ThemSanPham.resx">
       <DependentUpon>ThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\UC_DanhSachDonHang.resx">
+      <DependentUpon>UC_DanhSachDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\UC_DatHang.resx">
       <DependentUpon>UC_DatHang.cs</DependentUpon>

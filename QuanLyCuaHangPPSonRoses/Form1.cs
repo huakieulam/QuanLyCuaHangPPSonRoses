@@ -20,32 +20,24 @@ namespace QuanLyCuaHangPPSonRoses
         public Form1()
         {
             InitializeComponent();
-            connection = new NpgsqlConnection("Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres");
         }
         private void LoadData()
         {
-            try
+            string connectionString = @"Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
+            string query = "SELECT dh.maDH, dh.tenKH, dh.email, dh.sdt, dh.ngay, dh.tongDH, dh.trangthai, ctdh.masp, ctdh.tensp, ctdh.phanloai, ctdh.slmua, ctdh.giasp FROM donhang dh JOIN chitietdonhang ctdh ON dh.maDH = ctdh.madh where dh.maDH='16'";
+
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
 
-                // Tạo câu truy vấn SELECT để lấy dữ liệu từ bảng "sanpham"
-                string query = "SELECT masp, tensp, sl, loaisp, hinhanh FROM sanpham";
+                using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(query, connection))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
 
-                // Khởi tạo đối tượng NpgsqlDataAdapter và DataSet
-                dataAdapter = new NpgsqlDataAdapter(query, connection);
-                dataSet = new DataSet();
-
-                // Đổ dữ liệu từ cơ sở dữ liệu vào DataSet
-                dataAdapter.Fill(dataSet, "sanpham");
-
-                // Thiết lập nguồn dữ liệu cho DataGridView
-                dataGridView1.DataSource = dataSet.Tables["sanpham"];
-
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+                    dataGridView1.DataSource = dataTable;
+                }
             }
         }
 
