@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace QuanLyCuaHangPPSonRoses.ChucNang
 {
@@ -17,6 +18,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
             InitializeComponent();
         }
+        string connectionString = @"Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
 
 
         private void UC_DatHang_Load(object sender, EventArgs e)
@@ -38,7 +40,6 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
             flowLayoutPanel1.Controls.Clear();
 
-            string connectionString = @"Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
             string query = "SELECT * FROM sanpham";
             List<UC_SP_thongtinsp> danhSachSanPham = new List<UC_SP_thongtinsp>();
 
@@ -68,8 +69,153 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
             foreach (UC_SP_thongtinsp sanPham in danhSachSanPham)
             {
+                sanPham.XoaSanPhamClicked += XoaSanPham_Clicked;
+                sanPham.ChinhSuaSanPhamClicked += ChinhSuaSanPham_Clicked;
                 flowLayoutPanel1.Controls.Add(sanPham);
             }
+        }
+        private void ChinhSuaSanPham_Clicked(object sender, EventArgs e)
+        {
+            UC_SP_thongtinsp chonSP = (UC_SP_thongtinsp)sender;
+
+            string maSP = chonSP.MASP;
+            string tenSP = chonSP.TENSP;
+            int soLuong = chonSP.SOLUONG;
+            decimal gia = chonSP.GIA;
+            string phanLoai = chonSP.PHANLOAI;
+
+
+            bool tontaiSP = false;
+
+            foreach (DataGridViewRow row in dgvTaoDonHang.Rows)
+            {
+                if (row.Cells["dgvMaSP"].Value.ToString() == maSP)
+                {
+                    int slHienTai = Convert.ToInt32(row.Cells["dgvSL"].Value);
+                    if (soLuong > 0)
+                    {
+                        row.Cells["dgvSL"].Value = slHienTai + 1;
+
+                        decimal donGia = Convert.ToDecimal(row.Cells["dgvGia"].Value);
+                        decimal tongTienSP = (slHienTai + 1) * donGia;
+                        row.Cells["dgvTong"].Value = tongTienSP;
+                    }
+                    
+
+                    tontaiSP = true;
+                    break;
+                }
+            }
+
+            if (!tontaiSP)
+            {
+                dgvTaoDonHang.Rows.Add(dgvTaoDonHang.Rows.Count + 1, maSP, tenSP, phanLoai, 1, gia, gia);
+            }
+            if (soLuong > 0)
+            {
+                chonSP.SOLUONG = soLuong - 1;
+            }
+            TinhTongDonHang();
+        }
+
+        private void XoaSanPham_Clicked(object sender, EventArgs e)
+        {
+            UC_SP_thongtinsp sanPham = (UC_SP_thongtinsp)sender;
+            string maSP = sanPham.MASP;
+
+            foreach (DataGridViewRow row in dgvTaoDonHang.Rows)
+            {
+                if (row.Cells["dgvMaSP"].Value.ToString() == maSP)
+                {
+                    int slHienTai = Convert.ToInt32(row.Cells["dgvSL"].Value);
+                    dgvTaoDonHang.Rows.Remove(row);
+
+                    sanPham.SOLUONG += slHienTai;
+
+                    break;
+                }
+            }
+            TinhTongDonHang();
+        }
+        private void TinhTongDonHang()
+        {
+            decimal tongDonHang = 0;
+
+            foreach (DataGridViewRow row in dgvTaoDonHang.Rows)
+            {
+                decimal giaTriDonHang = Convert.ToDecimal(row.Cells["dgvTong"].Value);
+                tongDonHang += giaTriDonHang;
+            }
+
+            lblTongDonHang.Text = tongDonHang.ToString();
+        }
+
+        private void btnDanhSach_Click(object sender, EventArgs e)
+        {
+            DanhSachDonHang danhSachDonHang = new DanhSachDonHang();
+            danhSachDonHang.Show();
+        }
+        private void btnTaoDonHang_Click(object sender, EventArgs e)
+        {
+            LuuThongTinDonHang();
+            
+            dgvTaoDonHang.Rows.Clear();
+            txtTenKH.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
+            lblTongDonHang.Text = "";
+
+            MessageBox.Show("Tạo đơn hàng thành công!");
+        }
+        private void LuuThongTinDonHang()
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO donhang (tenKH, email, sdt, ngay, tongDH, trangthai) VALUES (@tenKH, @email, @sdt, @ngay, @tongDH, @trangthai)";
+                string trangthai = "Chưa thanh toán";
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@tenKH", txtTenKH.Text);
+                    command.Parameters.AddWithValue("@email", txtEmail.Text);
+                    command.Parameters.AddWithValue("@sdt", txtSDT.Text);
+                    command.Parameters.AddWithValue("@ngay", DateTime.Now);
+                    command.Parameters.AddWithValue("@tongDH", Convert.ToDecimal(lblTongDonHang.Text));
+                    command.Parameters.AddWithValue("@trangthai", trangthai);
+                    command.ExecuteNonQuery();
+                }
+
+                string queryMaDH = "SELECT lastval()";
+                int maDonHang;
+                using (NpgsqlCommand command = new NpgsqlCommand(queryMaDH, connection))
+                {
+                    maDonHang = Convert.ToInt32(command.ExecuteScalar());
+                }
+
+                query = "INSERT INTO chitietdonhang (madh, masp, tensp, phanloai, slmua, giasp) VALUES (@madh, @masp, @tensp, @phanloai, @slmua, @giasp)";
+                foreach (DataGridViewRow row in dgvTaoDonHang.Rows)
+                {
+                    string maSP = row.Cells["dgvMaSP"].Value.ToString();
+                    string tenSP = row.Cells["dgvTenSP"].Value.ToString();
+                    string phanLoai = row.Cells["dgvPhanLoai"].Value.ToString();
+                    int soLuongMua = Convert.ToInt32(row.Cells["dgvSL"].Value);
+                    decimal giaSP = Convert.ToInt64(row.Cells["dgvTong"].Value);
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@madh", maDonHang);
+                        command.Parameters.AddWithValue("@masp", maSP);
+                        command.Parameters.AddWithValue("@tensp", tenSP);
+                        command.Parameters.AddWithValue("@phanloai", phanLoai);
+                        command.Parameters.AddWithValue("@slmua", soLuongMua);
+                        command.Parameters.AddWithValue("@giasp", giaSP);
+
+                        command.ExecuteNonQuery();
+                        
+                    }
+                }
+            }
+            
 
         }
     }

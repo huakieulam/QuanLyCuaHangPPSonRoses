@@ -61,7 +61,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             set { hinhanh = value; picSP.Image = value; }
         }
 
-        
+
         public event EventHandler XoaSanPhamClicked;
         public event EventHandler ChinhSuaSanPhamClicked;
         private void btnXoa_Click(object sender, EventArgs e)

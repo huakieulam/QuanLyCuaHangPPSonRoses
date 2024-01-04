@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemSanPham));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDonVi = new System.Windows.Forms.Label();
             this.picSP = new System.Windows.Forms.PictureBox();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemHinhAnh = new Guna.UI2.WinForms.Guna2Button();
@@ -55,6 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblDonVi);
             this.panel1.Controls.Add(this.picSP);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnThemHinhAnh);
@@ -73,6 +75,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 548);
             this.panel1.TabIndex = 0;
+            // 
+            // lblDonVi
+            // 
+            this.lblDonVi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDonVi.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblDonVi.Location = new System.Drawing.Point(648, 418);
+            this.lblDonVi.Name = "lblDonVi";
+            this.lblDonVi.Size = new System.Drawing.Size(112, 48);
+            this.lblDonVi.TabIndex = 24;
+            this.lblDonVi.Text = "VND/1 thùng (20L)";
+            this.lblDonVi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picSP
             // 
@@ -130,7 +143,7 @@
             this.btnThemHinhAnh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThemHinhAnh.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnThemHinhAnh.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThemHinhAnh.Location = new System.Drawing.Point(83, 395);
+            this.btnThemHinhAnh.Location = new System.Drawing.Point(87, 395);
             this.btnThemHinhAnh.Name = "btnThemHinhAnh";
             this.btnThemHinhAnh.Size = new System.Drawing.Size(211, 48);
             this.btnThemHinhAnh.TabIndex = 5;
@@ -258,7 +271,7 @@
             this.txtGia.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtGia.PlaceholderText = "";
             this.txtGia.SelectedText = "";
-            this.txtGia.Size = new System.Drawing.Size(316, 48);
+            this.txtGia.Size = new System.Drawing.Size(234, 48);
             this.txtGia.TabIndex = 5;
             // 
             // txtSL
@@ -385,5 +398,6 @@
         private System.Windows.Forms.PictureBox picSP;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtGia;
+        private System.Windows.Forms.Label lblDonVi;
     }
 }

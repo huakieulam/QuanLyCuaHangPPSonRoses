@@ -240,10 +240,12 @@
             // 
             // panel2
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(219, 0);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Location = new System.Drawing.Point(216, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 590);
+            this.panel2.Size = new System.Drawing.Size(692, 566);
             this.panel2.TabIndex = 6;
             // 
             // QuanLy

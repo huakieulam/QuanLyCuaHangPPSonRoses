@@ -31,8 +31,9 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
 
             HienThiSP();
-            
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
         }
+    
         private Image HinhAnhMangByte(byte[] byteArray)
         {
             if (byteArray == null || byteArray.Length == 0)
@@ -43,13 +44,14 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                 return Image.FromStream(stream);
             }
         }
+        private List<UC_SP_thongtinsp> danhSachSanPham;
         public void HienThiSP()
         {
             flowLayoutPanel1.Controls.Clear();
 
             string connectionString = @"Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
             string query = "SELECT * FROM sanpham";
-            List<UC_SP_thongtinsp> danhSachSanPham = new List<UC_SP_thongtinsp>(); 
+            danhSachSanPham = new List<UC_SP_thongtinsp>();
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -125,6 +127,25 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             chinhSuaSanPham.ReadOnlyMaSP = true;
 
             chinhSuaSanPham.Show();
+
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+            string tuKhoa = txtTimKiem.Text.Trim().ToLower();
+
+            foreach (UC_SP_thongtinsp sanPham in danhSachSanPham)
+            {
+                if (sanPham.TENSP.ToLower().Contains(tuKhoa) || sanPham.MASP.ToLower().Contains(tuKhoa))
+                {
+                    sanPham.Visible = true; 
+                }
+                else
+                {
+                    sanPham.Visible = false;
+                }
+            }
         }
     }
 }
