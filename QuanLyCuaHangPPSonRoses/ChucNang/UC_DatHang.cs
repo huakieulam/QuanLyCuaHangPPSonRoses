@@ -36,12 +36,13 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                 return Image.FromStream(stream);
             }
         }
+        List<UC_SP_thongtinsp> danhSachSanPham;
         public void HienThiSP()
         {
             flowLayoutPanel1.Controls.Clear();
 
             string query = "SELECT * FROM sanpham";
-            List<UC_SP_thongtinsp> danhSachSanPham = new List<UC_SP_thongtinsp>();
+            danhSachSanPham = new List<UC_SP_thongtinsp>();
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -193,14 +194,16 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                     maDonHang = Convert.ToInt32(command.ExecuteScalar());
                 }
 
-                query = "INSERT INTO chitietdonhang (madh, masp, tensp, phanloai, slmua, giasp) VALUES (@madh, @masp, @tensp, @phanloai, @slmua, @giasp)";
+                query = "INSERT INTO chitietdonhang (madh, masp, tensp, phanloai, slmua, giasp, tonggiasp) VALUES (@madh, @masp, @tensp, @phanloai, @slmua, @giasp, @tonggiasp)";
                 foreach (DataGridViewRow row in dgvTaoDonHang.Rows)
                 {
                     string maSP = row.Cells["dgvMaSP"].Value.ToString();
                     string tenSP = row.Cells["dgvTenSP"].Value.ToString();
                     string phanLoai = row.Cells["dgvPhanLoai"].Value.ToString();
                     int soLuongMua = Convert.ToInt32(row.Cells["dgvSL"].Value);
-                    decimal giaSP = Convert.ToInt64(row.Cells["dgvTong"].Value);
+                    decimal giaSP = Convert.ToInt64(row.Cells["dgvGia"].Value);
+                    decimal tonggiasp = Convert.ToInt64(row.Cells["dgvTong"].Value);
+
                     using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@madh", maDonHang);
@@ -209,6 +212,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                         command.Parameters.AddWithValue("@phanloai", phanLoai);
                         command.Parameters.AddWithValue("@slmua", soLuongMua);
                         command.Parameters.AddWithValue("@giasp", giaSP);
+                        command.Parameters.AddWithValue("@tonggiasp", tonggiasp);
 
                         command.ExecuteNonQuery();
                         
@@ -217,6 +221,23 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             }
             
 
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKiem.Text.Trim().ToLower();
+
+            foreach (UC_SP_thongtinsp sanPham in danhSachSanPham)
+            {
+                if (sanPham.TENSP.ToLower().Contains(tuKhoa) || sanPham.MASP.ToLower().Contains(tuKhoa))
+                {
+                    sanPham.Visible = true;
+                }
+                else
+                {
+                    sanPham.Visible = false;
+                }
+            }
         }
     }
 }

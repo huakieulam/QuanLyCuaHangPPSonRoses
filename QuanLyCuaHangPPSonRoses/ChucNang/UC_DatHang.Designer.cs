@@ -153,7 +153,7 @@
             this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTimKiem.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTimKiem.IconLeft")));
@@ -166,6 +166,7 @@
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.Size = new System.Drawing.Size(413, 48);
             this.txtTimKiem.TabIndex = 7;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -422,7 +423,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(290, -6);
+            this.label4.Location = new System.Drawing.Point(260, -6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 35);
             this.label4.TabIndex = 21;
@@ -434,7 +435,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(592, -6);
+            this.label7.Location = new System.Drawing.Point(573, -6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 35);
             this.label7.TabIndex = 21;
@@ -467,14 +468,14 @@
             this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(584, 29);
+            this.txtEmail.Location = new System.Drawing.Point(565, 29);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(299, 49);
+            this.txtEmail.Size = new System.Drawing.Size(318, 49);
             this.txtEmail.TabIndex = 20;
             // 
             // txtSDT
@@ -494,7 +495,7 @@
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.ForeColor = System.Drawing.Color.Black;
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSDT.Location = new System.Drawing.Point(296, 29);
+            this.txtSDT.Location = new System.Drawing.Point(266, 29);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
@@ -526,7 +527,7 @@
             this.txtTenKH.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtTenKH.PlaceholderText = "";
             this.txtTenKH.SelectedText = "";
-            this.txtTenKH.Size = new System.Drawing.Size(287, 49);
+            this.txtTenKH.Size = new System.Drawing.Size(248, 49);
             this.txtTenKH.TabIndex = 20;
             // 
             // UC_DatHang

@@ -31,40 +31,69 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             panelHienThiDH.Controls.Clear();
 
             string connectionString = @"Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
-            string query = "SELECT dh.maDH, dh.tenKH, dh.email, dh.sdt, dh.ngay, dh.tongDH, dh.trangthai, ctdh.masp, ctdh.tensp, ctdh.phanloai, ctdh.slmua, ctdh.giasp FROM donhang dh JOIN chitietdonhang ctdh ON dh.maDH = ctdh.madh;";
-            List<UC_DanhSachDonHang> danhsachDH = new List<UC_DanhSachDonHang>();
+            string query = "SELECT dh.maDH, dh.tenKH, dh.email, dh.sdt, dh.ngay, dh.tongDH, dh.trangthai, ctdh.masp, ctdh.tensp, ctdh.phanloai, ctdh.slmua, ctdh.giasp, ctdh.tonggiasp FROM donhang dh JOIN chitietdonhang ctdh ON dh.maDH = ctdh.madh";
+            
+            Dictionary<string, List<UC_DanhSachDonHang>> danhSachDonHang = new Dictionary<string, List<UC_DanhSachDonHang>>();
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
 
-                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
+                NpgsqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    string orderID = reader.GetInt32(0).ToString();
+
+                    UC_DanhSachDonHang uc_DSDH = new UC_DanhSachDonHang();
+                    uc_DSDH.TENKH = reader["tenKH"].ToString();
+                    uc_DSDH.SDT = reader["sdt"].ToString();
+                    uc_DSDH.EMAIL = reader["email"].ToString();
+
+                    uc_DSDH.MASP = reader["masp"].ToString();
+                    uc_DSDH.TENSP = reader["tensp"].ToString();
+                    uc_DSDH.LOAI = reader["phanloai"].ToString();
+                    uc_DSDH.SL = Convert.ToInt32(reader["slmua"]);
+                    uc_DSDH.GIA = Convert.ToDecimal(reader["giasp"]);
+                    uc_DSDH.TONG = Convert.ToDecimal(reader["tonggiasp"]);
+                    uc_DSDH.TONGGIA= Convert.ToDecimal(reader["tongdh"]);
+                    if (danhSachDonHang.ContainsKey(orderID))
                     {
-                        while (reader.Read())
-                        {
-                            UC_DanhSachDonHang uc_DSDH = new UC_DanhSachDonHang();
-                            uc_DSDH.TENKH = reader["tenKH"].ToString();
-                            uc_DSDH.SDT = reader["sdt"].ToString();
-                            uc_DSDH.EMAIL = reader["email"].ToString();
-
-                            uc_DSDH.MASP = reader["masp"].ToString();
-                            uc_DSDH.TENSP = reader["tensp"].ToString();
-                            uc_DSDH.LOAI = reader["phanloai"].ToString();
-                            uc_DSDH.SL = Convert.ToInt32(reader["slmua"]);
-                            uc_DSDH.GIASP = Convert.ToDecimal(reader["giasp"]);
-                            uc_DSDH.TONGDON = Convert.ToDecimal(reader["tongDH"]);
-
-                            //panelHienThiDH.Controls.Add(uc_DSDH);
-                            danhsachDH.Add(uc_DSDH);
-
-                        }
+                        danhSachDonHang[orderID].Add(uc_DSDH);
+                    }
+                    else
+                    {
+                        danhSachDonHang.Add(orderID, new List<UC_DanhSachDonHang> { uc_DSDH });
                     }
                 }
+
+                reader.Close();
+                connection.Close();
             }
-            foreach (UC_DanhSachDonHang donHang in danhsachDH)
+
+            foreach (var order in danhSachDonHang)
             {
+                UC_DanhSachDonHang donHang = new UC_DanhSachDonHang();
+                donHang.TENKH = order.Value.First().TENKH;
+                donHang.SDT = order.Value.First().SDT;
+                donHang.EMAIL = order.Value.First().EMAIL;
+                donHang.TONGGIA = order.Value.First().TONGGIA;
+
+                foreach (UC_DanhSachDonHang sanPham in order.Value)
+                {
+                    // Thêm dữ liệu sản phẩm vào DataGridView của đơn hàng
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(donHang.dgvDSSPDonHang);
+                    row.Cells[0].Value = sanPham.MASP;
+                    row.Cells[1].Value = sanPham.TENSP;
+                    row.Cells[2].Value = sanPham.LOAI;
+                    row.Cells[3].Value = sanPham.SL;
+                    row.Cells[4].Value = sanPham.GIA;
+                    row.Cells[5].Value = sanPham.TONG;
+                    donHang.dgvDSSPDonHang.Rows.Add(row);
+                }
+
                 panelHienThiDH.Controls.Add(donHang);
             }
         }
