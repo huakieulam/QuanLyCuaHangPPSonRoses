@@ -80,6 +80,8 @@
             this.txtNhapEmail.SelectedText = "";
             this.txtNhapEmail.Size = new System.Drawing.Size(423, 48);
             this.txtNhapEmail.TabIndex = 3;
+            this.txtNhapEmail.TextChanged += new System.EventHandler(this.txtNhapEmail_TextChanged);
+            this.txtNhapEmail.Leave += new System.EventHandler(this.txtNhapEmail_Leave);
             // 
             // guna2Elipse9
             // 
@@ -166,7 +168,7 @@
             this.btnGuiMaXN.Text = "Gửi mã";
             this.btnGuiMaXN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuiMaXN.TextOffset = new System.Drawing.Point(5, -1);
-            this.btnGuiMaXN.UseTransparentBackground = true;
+            this.btnGuiMaXN.Click += new System.EventHandler(this.btnGuiMaXN_Click);
             // 
             // guna2Elipse8
             // 
@@ -200,12 +202,15 @@
             this.txtNhapMatKhau.Location = new System.Drawing.Point(204, 315);
             this.txtNhapMatKhau.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapMatKhau.Name = "txtNhapMatKhau";
-            this.txtNhapMatKhau.PasswordChar = '\0';
+            this.txtNhapMatKhau.PasswordChar = '●';
             this.txtNhapMatKhau.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtNhapMatKhau.PlaceholderText = "";
             this.txtNhapMatKhau.SelectedText = "";
             this.txtNhapMatKhau.Size = new System.Drawing.Size(423, 48);
             this.txtNhapMatKhau.TabIndex = 4;
+            this.txtNhapMatKhau.UseSystemPasswordChar = true;
+            this.txtNhapMatKhau.TextChanged += new System.EventHandler(this.txtNhapMatKhau_TextChanged);
+            this.txtNhapMatKhau.Leave += new System.EventHandler(this.txtNhapMatKhau_Leave);
             // 
             // txtNhapHoTen
             // 
@@ -229,6 +234,8 @@
             this.txtNhapHoTen.SelectedText = "";
             this.txtNhapHoTen.Size = new System.Drawing.Size(423, 48);
             this.txtNhapHoTen.TabIndex = 1;
+            this.txtNhapHoTen.TextChanged += new System.EventHandler(this.txtNhapHoTen_TextChanged);
+            this.txtNhapHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhapHoTen_KeyPress);
             // 
             // btnDangKy
             // 
@@ -254,7 +261,7 @@
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangKy.TextOffset = new System.Drawing.Point(5, -1);
-            this.btnDangKy.UseTransparentBackground = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // panel1
             // 
@@ -381,6 +388,8 @@
             this.txtNhapSDT.SelectedText = "";
             this.txtNhapSDT.Size = new System.Drawing.Size(423, 48);
             this.txtNhapSDT.TabIndex = 2;
+            this.txtNhapSDT.TextChanged += new System.EventHandler(this.txtNhapSDT_TextChanged);
+            this.txtNhapSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhapSDT_KeyPress);
             // 
             // guna2Elipse10
             // 
