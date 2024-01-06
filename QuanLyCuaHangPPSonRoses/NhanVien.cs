@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangPPSonRoses.ChucNang;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,35 @@ namespace QuanLyCuaHangPPSonRoses
         {
             InitializeComponent();
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        UC_TrangChu uc_TrangChu = new UC_TrangChu();
+        UC_QLTaiKhoan uc_QLTaiKhoan = new UC_QLTaiKhoan();
+        UC_DatHang uc_DatHang = new UC_DatHang();
+        private void btnDatHang_Click(object sender, EventArgs e)
         {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(uc_DatHang);
+            uc_DatHang.Dock = DockStyle.Fill;
+        }
 
+        private void NhanVien_Load(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(uc_TrangChu);
+            uc_TrangChu.Dock = DockStyle.Fill;
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(uc_TrangChu);
+            uc_TrangChu.Dock = DockStyle.Fill;
+        }
+
+        private void btnQLTaiKhoan_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(uc_QLTaiKhoan);
+            uc_QLTaiKhoan.Dock = DockStyle.Fill;
         }
     }
 }

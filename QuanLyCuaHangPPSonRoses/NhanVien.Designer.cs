@@ -82,6 +82,7 @@
             this.btnDatHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDatHang.TextOffset = new System.Drawing.Point(5, -1);
             this.btnDatHang.UseTransparentBackground = true;
+            this.btnDatHang.Click += new System.EventHandler(this.btnDatHang_Click);
             // 
             // btnDangXuat
             // 
@@ -163,6 +164,7 @@
             this.btnQLTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLTaiKhoan.TextOffset = new System.Drawing.Point(5, -1);
             this.btnQLTaiKhoan.UseTransparentBackground = true;
+            this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click);
             // 
             // btnTrangChu
             // 
@@ -191,6 +193,7 @@
             this.btnTrangChu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTrangChu.TextOffset = new System.Drawing.Point(5, -1);
             this.btnTrangChu.UseTransparentBackground = true;
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // guna2Elipse1
             // 
@@ -206,17 +209,19 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(219, 0);
+            this.panel2.Location = new System.Drawing.Point(219, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 590);
+            this.panel2.Size = new System.Drawing.Size(689, 566);
             this.panel2.TabIndex = 10;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // NhanVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(920, 590);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -225,6 +230,8 @@
             this.Name = "NhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhanVien";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.NhanVien_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

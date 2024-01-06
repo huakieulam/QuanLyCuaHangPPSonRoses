@@ -45,9 +45,9 @@
             this.panelHienThiDH.AutoScroll = true;
             this.panelHienThiDH.BackColor = System.Drawing.Color.White;
             this.panelHienThiDH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHienThiDH.Location = new System.Drawing.Point(12, 58);
+            this.panelHienThiDH.Location = new System.Drawing.Point(12, 50);
             this.panelHienThiDH.Name = "panelHienThiDH";
-            this.panelHienThiDH.Size = new System.Drawing.Size(744, 564);
+            this.panelHienThiDH.Size = new System.Drawing.Size(738, 572);
             this.panelHienThiDH.TabIndex = 0;
             // 
             // btnThoat
@@ -67,7 +67,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThoat.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThoat.Location = new System.Drawing.Point(12, 14);
+            this.btnThoat.Location = new System.Drawing.Point(12, 6);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(107, 38);
             this.btnThoat.TabIndex = 22;
@@ -80,8 +80,8 @@
             // DanhSachDonHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(770, 631);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
+            this.ClientSize = new System.Drawing.Size(763, 631);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.panelHienThiDH);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
