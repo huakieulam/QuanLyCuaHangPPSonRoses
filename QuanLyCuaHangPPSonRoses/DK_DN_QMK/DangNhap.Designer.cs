@@ -257,7 +257,6 @@
             this.rdbKhachHang.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdbKhachHang.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rdbKhachHang.UseVisualStyleBackColor = false;
-            this.rdbKhachHang.CheckedChanged += new System.EventHandler(this.rdbKhachHang_CheckedChanged);
             // 
             // guna2Elipse6
             // 

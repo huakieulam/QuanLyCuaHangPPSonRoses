@@ -190,9 +190,6 @@
     <Compile Include="DK_DN_QMK\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\..\Đồ án CNPM\KetNoiDuLieu.cs">
-      <Link>DK_DN_QMK\KetNoiDuLieu.cs</Link>
-    </Compile>
     <Compile Include="DK_DN_QMK\QuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,7 +216,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="QuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,7 +228,6 @@
     <EmbeddedResource Include="ChucNang\ThemSanPham.resx">
       <DependentUpon>ThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="ChucNang\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>

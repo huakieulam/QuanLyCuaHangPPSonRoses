@@ -44,9 +44,9 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
             {
                 MessageBox.Show("Chỉ có khách hàng mới được đăng ký");
             }
-            
-            
-           
+
+
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
         {
             string email = txtNhapEmail.Text;
             string matkhau = txtNhapMatKhau.Text;
-           
+
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(matkhau))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
@@ -163,15 +163,15 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                             //switch (vaitro)
                             //{
                             //    case "Khách hàng":
-                            //        FormKhachHang formKhachHang = new FormKhachHang();
+                            //        KhachHang formKhachHang = new KhachHang();
                             //        formKhachHang.Show();
                             //        break;
                             //    case "Nhân viên":
-                            //        FormNhanVien formNhanVien = new FormNhanVien();
+                            //        NhanVien formNhanVien = new NhanVien();
                             //        formNhanVien.Show();
                             //        break;
                             //    case "Quản lý":
-                            //        FormQuanLy formQuanLy = new FormQuanLy();
+                            //        QuanLy formQuanLy = new QuanLy();
                             //        formQuanLy.Show();
                             //        break;
                             //    default:
@@ -184,13 +184,13 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                         else
                         {
                             MessageBox.Show("Vui lòng chọn đúng vai trò!");
-                        }     
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Vai trò không hợp lệ!");
                     }
-                }           
+                }
             }
             else
             {
@@ -211,10 +211,6 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                 return builder.ToString();
             }
         }
-     
-        public void rdbKhachHang_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
+

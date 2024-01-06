@@ -37,7 +37,7 @@
             this.txtXNMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtNhapEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNhapMK = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse9 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnXacNhan = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -149,28 +149,29 @@
             this.guna2Button4.TextOffset = new System.Drawing.Point(5, -1);
             this.guna2Button4.UseTransparentBackground = true;
             // 
-            // txtNhapEmail
+            // txtNhapMK
             // 
-            this.txtNhapEmail.BorderRadius = 15;
-            this.txtNhapEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNhapEmail.DefaultText = "";
-            this.txtNhapEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNhapEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNhapEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNhapEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNhapEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapEmail.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNhapEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtNhapEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapEmail.Location = new System.Drawing.Point(267, 117);
-            this.txtNhapEmail.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtNhapEmail.Name = "txtNhapEmail";
-            this.txtNhapEmail.PasswordChar = '\0';
-            this.txtNhapEmail.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtNhapEmail.PlaceholderText = "";
-            this.txtNhapEmail.SelectedText = "";
-            this.txtNhapEmail.Size = new System.Drawing.Size(349, 48);
-            this.txtNhapEmail.TabIndex = 1;
+            this.txtNhapMK.BorderRadius = 15;
+            this.txtNhapMK.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNhapMK.DefaultText = "";
+            this.txtNhapMK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNhapMK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNhapMK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNhapMK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNhapMK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNhapMK.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtNhapMK.ForeColor = System.Drawing.Color.Black;
+            this.txtNhapMK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNhapMK.Location = new System.Drawing.Point(267, 117);
+            this.txtNhapMK.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtNhapMK.Name = "txtNhapMK";
+            this.txtNhapMK.PasswordChar = '\0';
+            this.txtNhapMK.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtNhapMK.PlaceholderText = "";
+            this.txtNhapMK.SelectedText = "";
+            this.txtNhapMK.Size = new System.Drawing.Size(349, 48);
+            this.txtNhapMK.TabIndex = 1;
+            this.txtNhapMK.Leave += new System.EventHandler(this.txtNhapMK_Leave);
             // 
             // guna2Elipse9
             // 
@@ -202,6 +203,7 @@
             this.btnXacNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnXacNhan.TextOffset = new System.Drawing.Point(5, -1);
             this.btnXacNhan.UseTransparentBackground = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // panel1
             // 
@@ -222,7 +224,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtXNMatKhau);
-            this.Controls.Add(this.txtNhapEmail);
+            this.Controls.Add(this.txtNhapMK);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -241,7 +243,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtXNMatKhau;
-        private Guna.UI2.WinForms.Guna2TextBox txtNhapEmail;
+        private Guna.UI2.WinForms.Guna2TextBox txtNhapMK;
         private Guna.UI2.WinForms.Guna2Button btnXacNhan;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
