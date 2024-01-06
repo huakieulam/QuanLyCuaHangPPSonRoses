@@ -388,8 +388,8 @@
             this.txtNhapSDT.SelectedText = "";
             this.txtNhapSDT.Size = new System.Drawing.Size(423, 48);
             this.txtNhapSDT.TabIndex = 2;
-            this.txtNhapSDT.TextChanged += new System.EventHandler(this.txtNhapSDT_TextChanged);
             this.txtNhapSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhapSDT_KeyPress);
+            this.txtNhapSDT.Leave += new System.EventHandler(this.txtNhapSDT_Leave);
             // 
             // guna2Elipse10
             // 

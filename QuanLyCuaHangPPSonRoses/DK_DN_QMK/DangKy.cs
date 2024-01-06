@@ -191,11 +191,11 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                 return false;
             }
 
-            // Kiểm tra chứa ít nhất 1 ký tự đặc biệt
-            if (!Regex.IsMatch(password, "[^a-zA-Z0-9]"))
-            {
-                return false;
-            }
+            //// Kiểm tra chứa ít nhất 1 ký tự đặc biệt hoặc không có ký tự đặc biệt
+            //if (!Regex.IsMatch(password, "[^a-zA-Z0-9]") && password.Length > 0)
+            //{
+            //    return false;
+            //}
 
             return true;
         }
@@ -222,7 +222,7 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
 
             return true;
         }
-      
+
         private void txtNhapEmail_TextChanged(object sender, EventArgs e)
         {
             string email = txtNhapEmail.Text;
@@ -268,7 +268,7 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
             {
                 // Mật khẩu không hợp lệ
                 // Hiển thị thông báo lỗi
-                MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải chứa chữ cái in hoa, chữ cái thường, chữ số và ký tự đặc biệt.");
+                MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải chứa chữ cái in hoa, chữ cái thường, chữ số.");
                 txtNhapMatKhau.Text = string.Empty;
             }
         }
@@ -316,7 +316,7 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
             }
             return true;
         }
-        private void txtNhapSDT_TextChanged(object sender, EventArgs e)
+        private void txtNhapSDT_Leave(object sender, EventArgs e)
         {
             string phoneNumber = txtNhapSDT.Text;
             if (phoneNumber.Length == 10)
@@ -327,12 +327,18 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                     txtNhapSDT.Clear();
                 }
             }
+            else if (phoneNumber.Length < 10) // Thêm điều kiện khi độ dài nhỏ hơn 10
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có đủ 10 số.");
+                txtNhapSDT.Clear();
+            }
             else if (phoneNumber.Length > 10)
             {
                 MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại chỉ có độ dài là 10 số.");
                 txtNhapSDT.Clear();
             }
         }
+
         private void txtNhapSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

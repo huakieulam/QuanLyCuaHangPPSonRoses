@@ -142,6 +142,7 @@
             this.btnGuiMaXN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuiMaXN.TextOffset = new System.Drawing.Point(5, -1);
             this.btnGuiMaXN.UseTransparentBackground = true;
+            this.btnGuiMaXN.Click += new System.EventHandler(this.btnGuiMaXN_Click);
             // 
             // btnXacNhan
             // 
@@ -168,6 +169,7 @@
             this.btnXacNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnXacNhan.TextOffset = new System.Drawing.Point(5, -1);
             this.btnXacNhan.UseTransparentBackground = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // guna2Elipse7
             // 
