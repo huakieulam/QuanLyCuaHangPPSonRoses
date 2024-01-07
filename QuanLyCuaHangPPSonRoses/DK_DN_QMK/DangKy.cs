@@ -180,10 +180,10 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
             return true;
         }
 
-        private void txtNhapEmail_TextChanged(object sender, EventArgs e)
+        private void txtNhapEmail_Leave(object sender, EventArgs e)
         {
             string email = txtNhapEmail.Text;
-            if (IsValidEmail(email))
+            if (!IsValidEmail(email))
             {
                 // Email không hợp lệ
                 // Hiển thị thông báo lỗi
