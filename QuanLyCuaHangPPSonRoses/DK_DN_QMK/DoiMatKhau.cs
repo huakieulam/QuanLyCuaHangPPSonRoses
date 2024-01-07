@@ -84,7 +84,7 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
         }
         private bool IsValidPassword(string password)
         {
-            // Kiểm tra độ dài ít nhất 8 ký tự
+            //Kiểm tra độ dài ít nhất 8 ký tự
             if (password.Length < 8)
             {
                 return false;
@@ -96,25 +96,23 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                 return false;
             }
 
-            // Kiểm tra chứa ít nhất 1 chữ cái in hoa
-            if (!Regex.IsMatch(password, "[A-Z]"))
-            {
-                return false;
-            }
-
-            // Kiểm tra chứa ít nhất 1 chữ cái thường
-            if (!Regex.IsMatch(password, "[a-z]"))
-            {
-                return false;
-            }
-
-            // Kiểm tra chứa ít nhất 1 chữ số
-            if (!Regex.IsMatch(password, "[0-9]"))
+            // Kiểm tra chỉ chứa chữ cái in hoa, chữ cái thường và chữ số
+            if (!Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"))
             {
                 return false;
             }
 
             return true;
+        }
+        private void txtNhapMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            string password = txtNhapMK.Text;
+            if (password.Length >= 8 && !IsValidPassword(password))
+            {
+                // Mật khẩu không hợp lệ
+                MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải chứa chữ cái in hoa, chữ cái thường và chữ số.");
+                txtNhapMK.Text = "";
+            }
         }
         private void txtNhapMK_Leave(object sender, EventArgs e)
         {
@@ -124,14 +122,7 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                 // Mật khẩu không hợp lệ
                 // Hiển thị thông báo lỗi
                 MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải có ít nhất 8 ký tự.");
-                txtNhapMK.Text = string.Empty;
-            }
-            else if (!IsValidPassword(password))
-            {
-                // Mật khẩu không hợp lệ
-                // Hiển thị thông báo lỗi
-                MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải chứa chữ cái in hoa, chữ cái thường, chữ số.");
-                txtNhapMK.Text = string.Empty;
+                txtNhapMK.Text = "";
             }
         }
         private void btnXacNhan_Click(object sender, EventArgs e)

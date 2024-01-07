@@ -22,6 +22,17 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
         public DangNhap()
         {
             InitializeComponent();
+            rdbQuanLy.CheckedChanged += RdbQuanLy_CheckedChanged;
+            rdbNhanVien.CheckedChanged += RdbNhanVien_CheckedChanged;
+        }
+        private void RdbQuanLy_CheckedChanged(object sender, EventArgs e)
+        {
+            btnDangKy.Visible = !rdbQuanLy.Checked;
+        }
+
+        private void RdbNhanVien_CheckedChanged(object sender, EventArgs e)
+        {
+            btnDangKy.Visible = !rdbNhanVien.Checked;
         }
 
         private void btnQuenMatKhau_Click(object sender, EventArgs e)
@@ -40,13 +51,6 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                 this.Hide();
 
             }
-            else
-            {
-                MessageBox.Show("Chỉ có khách hàng mới được đăng ký");
-            }
-
-
-
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -156,39 +160,30 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                         if (vaitroDangNhap == vaitro)
                         {
                             MessageBox.Show($"Đăng nhập thành công với vai trò: {vaitro}");
+                            switch (vaitro)
+                            {
+                                case "Khách hàng":
+                                    KhachHang formKhachHang = new KhachHang();
+                                    formKhachHang.Show();
+                                    this.Hide();
+                                    break;
+                                case "Nhân viên":
+                                    NhanVien formNhanVien = new NhanVien();
+                                    formNhanVien.Show();
+                                    this.Hide();
+                                    break;
+                                case "Quản lý":
+                                    QuanLy formQuanLy = new QuanLy();
+                                    formQuanLy.Show();
+                                    this.Hide();
+                                    break;
 
-                            TrangChu formTrangChu = new TrangChu();
-                            formTrangChu.Show();
-                            this.Hide();
-                            //switch (vaitro)
-                            //{
-                            //    case "Khách hàng":
-                            //        KhachHang formKhachHang = new KhachHang();
-                            //        formKhachHang.Show();
-                            //        break;
-                            //    case "Nhân viên":
-                            //        NhanVien formNhanVien = new NhanVien();
-                            //        formNhanVien.Show();
-                            //        break;
-                            //    case "Quản lý":
-                            //        QuanLy formQuanLy = new QuanLy();
-                            //        formQuanLy.Show();
-                            //        break;
-                            //    default:
-                            //        MessageBox.Show("Vai trò không hợp lệ!");
-                            //        break;
-                            //}
-
-                            //this.Hide();
+                            }
                         }
                         else
                         {
                             MessageBox.Show("Vui lòng chọn đúng vai trò!");
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vai trò không hợp lệ!");
                     }
                 }
             }

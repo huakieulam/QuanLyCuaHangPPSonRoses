@@ -73,6 +73,7 @@
             this.rdbQuanLy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdbQuanLy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rdbQuanLy.UseVisualStyleBackColor = false;
+            this.rdbQuanLy.ClientSizeChanged += new System.EventHandler(this.RdbQuanLy_CheckedChanged);
             // 
             // txtNhapMatKhau
             // 
@@ -236,6 +237,7 @@
             this.rdbNhanVien.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdbNhanVien.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rdbNhanVien.UseVisualStyleBackColor = false;
+            this.rdbNhanVien.CheckedChanged += new System.EventHandler(this.RdbNhanVien_CheckedChanged);
             // 
             // rdbKhachHang
             // 

@@ -81,7 +81,6 @@
             this.txtNhapEmail.Size = new System.Drawing.Size(423, 48);
             this.txtNhapEmail.TabIndex = 3;
             this.txtNhapEmail.TextChanged += new System.EventHandler(this.txtNhapEmail_TextChanged);
-            this.txtNhapEmail.Leave += new System.EventHandler(this.txtNhapEmail_Leave);
             // 
             // guna2Elipse9
             // 
@@ -235,7 +234,6 @@
             this.txtNhapHoTen.Size = new System.Drawing.Size(423, 48);
             this.txtNhapHoTen.TabIndex = 1;
             this.txtNhapHoTen.TextChanged += new System.EventHandler(this.txtNhapHoTen_TextChanged);
-            this.txtNhapHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhapHoTen_KeyPress);
             // 
             // btnDangKy
             // 
@@ -388,6 +386,7 @@
             this.txtNhapSDT.SelectedText = "";
             this.txtNhapSDT.Size = new System.Drawing.Size(423, 48);
             this.txtNhapSDT.TabIndex = 2;
+            this.txtNhapSDT.TextChanged += new System.EventHandler(this.txtNhapSDT_TextChanged);
             this.txtNhapSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhapSDT_KeyPress);
             this.txtNhapSDT.Leave += new System.EventHandler(this.txtNhapSDT_Leave);
             // 
