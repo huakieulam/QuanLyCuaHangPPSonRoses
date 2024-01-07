@@ -72,13 +72,17 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
             try
             {
                 string email = txtNhapEmail.Text;
+                string name = txtNhapHoTen.Text;
+                string phoneNumber = txtNhapSDT.Text;
+                string password = txtNhapMatKhau.Text;
 
-                // Kiểm tra xem email đã được nhập hay chưa
-                if (string.IsNullOrEmpty(email))
+                // Kiểm tra xem tất cả các thông tin đã được nhập hay chưa
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(password))
                 {
-                    MessageBox.Show("Vui lòng nhập địa chỉ email trước khi gửi mã xác nhận.", "Thông báo");
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi gửi mã xác nhận.", "Thông báo");
                     return;
                 }
+
 
                 otp = rd.Next(100000, 1000000);
 
@@ -127,44 +131,18 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
         }
         private bool IsValidName(string name)
         {
-            // Kiểm tra không chứa khoảng trắng
-            if (name.Contains(" "))
-            {
-                return false;
-            }
-
-            // Kiểm tra chỉ chứa chữ cái
-            string pattern = @"^[a-zA-Z]+$";
+            // Kiểm tra chỉ chứa chữ cái có dấu và ít nhất một chữ cái
+            string pattern = @"^[\p{L} ]+$";
             Regex regex = new Regex(pattern);
-            if (!regex.IsMatch(name))
-            {
-                return false;
-            }
-
-            return true;
+            return regex.IsMatch(name);
         }
-        private bool IsValidPhoneNumber(string phoneNumber)
-        {
-            // Kiểm tra không chứa khoảng trắng
-            if (phoneNumber.Contains(" "))
-            {
-                return false;
-            }
 
-            // Kiểm tra chỉ chứa số và có độ dài là 10
-            if (phoneNumber.Length != 10 || !phoneNumber.All(char.IsDigit))
-            {
-                return false;
-            }
-
-            return true;
-         
-        }
         private bool IsValidPassword(string password)
         {
-            // Kiểm tra độ dài ít nhất 8 ký tự
+            //Kiểm tra độ dài ít nhất 8 ký tự
             if (password.Length < 8)
             {
+                return false;
             }
 
             // Kiểm tra không chứa khoảng trắng
@@ -173,35 +151,14 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                 return false;
             }
 
-            // Kiểm tra chứa ít nhất 1 chữ cái in hoa
-            if (!Regex.IsMatch(password, "[A-Z]"))
+            // Kiểm tra chỉ chứa chữ cái in hoa, chữ cái thường và chữ số
+            if (!Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"))
             {
                 return false;
             }
-
-            // Kiểm tra chứa ít nhất 1 chữ cái thường
-            if (!Regex.IsMatch(password, "[a-z]"))
-            {
-                return false;
-            }
-
-            // Kiểm tra chứa ít nhất 1 chữ số
-            if (!Regex.IsMatch(password, "[0-9]"))
-            {
-                return false;
-            }
-
-            //// Kiểm tra chứa ít nhất 1 ký tự đặc biệt hoặc không có ký tự đặc biệt
-            //if (!Regex.IsMatch(password, "[^a-zA-Z0-9]") && password.Length > 0)
-            //{
-            //    return false;
-            //}
 
             return true;
         }
-
-        private bool isInvalidNameShown = false;
-        private bool isInvalidPhoneNumber = false;
 
         private bool IsValidEmail(string email)
         {
@@ -228,29 +185,20 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
             string email = txtNhapEmail.Text;
             if (IsValidEmail(email))
             {
-                // Email hợp lệ
-                // Tiến hành xử lý hoặc hiển thị thông báo thành công
-                MessageBox.Show("Email hợp lệ!");
-            }
-        }
-
-        private void txtNhapEmail_Leave(object sender, EventArgs e)
-        {
-            string email = txtNhapEmail.Text;
-            if (!IsValidEmail(email))
-            {
                 // Email không hợp lệ
                 // Hiển thị thông báo lỗi
                 MessageBox.Show("Email không hợp lệ! Vui lòng nhập đúng định dạng email và kết thúc bằng @gmail.com.");
-                txtNhapEmail.Text = string.Empty;
+                txtNhapEmail.Text = "";
             }
         }
         private void txtNhapMatKhau_TextChanged(object sender, EventArgs e)
         {
             string password = txtNhapMatKhau.Text;
-            if (password.Length >= 8 && IsValidPassword(password))
+            if (password.Length >= 8 && !IsValidPassword(password))
             {
-               //Mật khẩu hợp lệ
+                // Mật khẩu không hợp lệ
+                MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải chứa chữ cái in hoa, chữ cái thường và chữ số.");
+                txtNhapMatKhau.Text = "";
             }
         }
        
@@ -262,79 +210,36 @@ namespace QuanLyCuaHangPPSonRoses.DK_DN_QMK
                 // Mật khẩu không hợp lệ
                 // Hiển thị thông báo lỗi
                 MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải có ít nhất 8 ký tự.");
-                txtNhapMatKhau.Text = string.Empty;
-            }
-            else if (!IsValidPassword(password))
-            {
-                // Mật khẩu không hợp lệ
-                // Hiển thị thông báo lỗi
-                MessageBox.Show("Mật khẩu không hợp lệ! Mật khẩu phải chứa chữ cái in hoa, chữ cái thường, chữ số.");
-                txtNhapMatKhau.Text = string.Empty;
+                txtNhapMatKhau.Text = "";
             }
         }
-
+       
         private void txtNhapHoTen_TextChanged(object sender, EventArgs e)
         {
+
             string name = txtNhapHoTen.Text;
             if (!IsValidName(name))
             {
-                MessageBox.Show("Tên không hợp lệ! Tên không được chứa khoảng trắng và chỉ chứa chữ cái.");
+                MessageBox.Show("Tên không hợp lệ!");
                 txtNhapHoTen.Text = ""; // Xóa nội dung nhập vào
             }
         }
-        private bool IsValidCharacter(char inputChar)
-        {
-            if (Char.IsLetter(inputChar))
-            {
-                return true;
-            }
-            else if (Char.IsControl(inputChar))
-            {
-                return true;
-            }
 
-            return false;
-        }
-        private void txtNhapHoTen_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char inputChar = e.KeyChar;
-
-            if (!IsValidCharacter(inputChar))
-            {
-                MessageBox.Show("Tên không hợp lệ! Tên không được chứa khoảng trắng và chỉ chứa chữ cái.");
-                e.Handled = true; // Ngăn người dùng nhập ký tự không hợp lệ
-            }
-        }
-
-        private bool ValidatePhoneNumber()
+        private void txtNhapSDT_TextChanged(object sender, EventArgs e)
         {
             string phoneNumber = txtNhapSDT.Text;
-            if (!IsValidPhoneNumber(phoneNumber))
+            if (phoneNumber.Length > 10)
             {
-                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại không được chứa khoảng trắng, chỉ chứa số và có độ dài là 10.");
-                return false;
+                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại chỉ có độ dài là 10 số.");
+                txtNhapSDT.Text = "";
             }
-            return true;
         }
         private void txtNhapSDT_Leave(object sender, EventArgs e)
         {
             string phoneNumber = txtNhapSDT.Text;
-            if (phoneNumber.Length == 10)
-            {
-                if (!ValidatePhoneNumber())
-                {
-                    MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại không được chứa khoảng trắng, chỉ chứa số và có độ dài là 10.");
-                    txtNhapSDT.Clear();
-                }
-            }
-            else if (phoneNumber.Length < 10) // Thêm điều kiện khi độ dài nhỏ hơn 10
+            if (phoneNumber.Length < 10) //  khi độ dài nhỏ hơn 10
             {
                 MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có đủ 10 số.");
-                txtNhapSDT.Clear();
-            }
-            else if (phoneNumber.Length > 10)
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại chỉ có độ dài là 10 số.");
                 txtNhapSDT.Clear();
             }
         }
