@@ -239,5 +239,16 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                 }
             }
         }
+
+        private void btnLamMoiDL_Click(object sender, EventArgs e)
+        {
+            dgvTaoDonHang.Rows.Clear();
+            txtTenKH.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
+            lblTongDonHang.Text = "";
+
+            HienThiSP();
+        }
     }
 }
