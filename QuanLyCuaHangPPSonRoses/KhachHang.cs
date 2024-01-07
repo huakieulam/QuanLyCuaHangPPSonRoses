@@ -1,4 +1,5 @@
 ﻿using QuanLyCuaHangPPSonRoses.ChucNang;
+using QuanLyCuaHangPPSonRoses.DK_DN_QMK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,13 @@ namespace QuanLyCuaHangPPSonRoses
             panel2.Controls.Clear();
             panel2.Controls.Add(uc_TrangChu);
             uc_TrangChu.Dock = DockStyle.Fill;
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DangNhap formDangNhap = new DangNhap();
+            formDangNhap.Show();
         }
     }
 }
