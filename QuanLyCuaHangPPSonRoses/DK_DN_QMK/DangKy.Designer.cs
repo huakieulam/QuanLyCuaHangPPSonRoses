@@ -80,7 +80,7 @@
             this.txtNhapEmail.SelectedText = "";
             this.txtNhapEmail.Size = new System.Drawing.Size(423, 48);
             this.txtNhapEmail.TabIndex = 3;
-            this.txtNhapEmail.TextChanged += new System.EventHandler(this.txtNhapEmail_TextChanged);
+            this.txtNhapEmail.Leave += new System.EventHandler(this.txtNhapEmail_Leave);
             // 
             // guna2Elipse9
             // 
