@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,7 +50,9 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
             if (uc_DSDH != null)
             {
-                uc_DSDH.CapNhatTrangThaiThanhToan();
+                int maDH = uc_DSDH.MaDonHang;
+
+                uc_DSDH.CapNhatTrangThaiThanhToan(maDH);
             }
 
             this.Close();

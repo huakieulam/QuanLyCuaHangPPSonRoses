@@ -44,7 +44,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
                 while (reader.Read())
                 {
-                    string orderID = reader.GetInt32(0).ToString();
+                    string maDH = reader.GetInt32(0).ToString();
 
                     UC_DanhSachDonHang uc_DSDH = new UC_DanhSachDonHang();
                     uc_DSDH.TENKH = reader["tenKH"].ToString();
@@ -58,13 +58,13 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                     uc_DSDH.GIA = Convert.ToDecimal(reader["giasp"]);
                     uc_DSDH.TONG = Convert.ToDecimal(reader["tonggiasp"]);
                     uc_DSDH.TONGGIA= Convert.ToDecimal(reader["tongdh"]);
-                    if (danhSachDonHang.ContainsKey(orderID))
+                    if (danhSachDonHang.ContainsKey(maDH))
                     {
-                        danhSachDonHang[orderID].Add(uc_DSDH);
+                        danhSachDonHang[maDH].Add(uc_DSDH);
                     }
                     else
                     {
-                        danhSachDonHang.Add(orderID, new List<UC_DanhSachDonHang> { uc_DSDH });
+                        danhSachDonHang.Add(maDH, new List<UC_DanhSachDonHang> { uc_DSDH });
                     }
                 }
 
@@ -75,6 +75,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             foreach (var order in danhSachDonHang)
             {
                 UC_DanhSachDonHang donHang = new UC_DanhSachDonHang();
+                donHang.MaDonHang = Convert.ToInt32(order.Key);
                 donHang.TENKH = order.Value.First().TENKH;
                 donHang.SDT = order.Value.First().SDT;
                 donHang.EMAIL = order.Value.First().EMAIL;
@@ -82,7 +83,6 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
                 foreach (UC_DanhSachDonHang sanPham in order.Value)
                 {
-                    // Thêm dữ liệu sản phẩm vào DataGridView của đơn hàng
                     DataGridViewRow row = new DataGridViewRow();
                     row.CreateCells(donHang.dgvDSSPDonHang);
                     row.Cells[0].Value = sanPham.MASP;

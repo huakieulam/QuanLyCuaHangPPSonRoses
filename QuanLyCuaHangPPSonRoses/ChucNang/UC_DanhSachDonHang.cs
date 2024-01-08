@@ -108,7 +108,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             get { return email; }
             set { email = value; lblEmail.Text = value; }
         }
-
+        public int MaDonHang { get; set; }
         private void btnChinhSua_Click(object sender, EventArgs e)
         {
 
@@ -116,12 +116,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
         private void UC_DanhSachDonHang_Load(object sender, EventArgs e)
         {
-            if (daThanhToan)
-            {
-                btnThanhToan.Text = "Đã thanh toán";
-                btnThanhToan.Enabled = false;
-                btnThanhToan.Visible = true;
-            }
+            
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -129,15 +124,28 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             ThanhToan thanhToan = new ThanhToan(this);
             thanhToan.TongTien = TONGGIA;
             thanhToan.Show();
-        }
-        private bool daThanhToan = false;
 
-        public void CapNhatTrangThaiThanhToan()
+            
+        }
+        
+        public void CapNhatTrangThaiThanhToan(int maDH)
         {
-            daThanhToan = true;
             btnThanhToan.Text = "Đã thanh toán";
             btnThanhToan.Enabled = false;
             btnThanhToan.Visible = true;
+            string connectionString = "Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
+            string query = "UPDATE donhang SET trangthai = 'Đã thanh toán' WHERE maDH = @maDH";
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
+                command.Parameters.AddWithValue("@maDH", maDH);
+                command.ExecuteNonQuery();
+
+                connection.Close();
+            }
         }
     }
 }
