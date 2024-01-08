@@ -17,7 +17,7 @@ namespace QuanLyCuaHangPPSonRoses
         UC_TrangChu uc_TrangChu = new UC_TrangChu();
         UC_SanPham uc_SanPham = new UC_SanPham();
         UC_ThongKe uc_Thongke = new UC_ThongKe();
-        UC_QLTaiKhoan uc_QLTK = new UC_QLTaiKhoan();
+        UC_QLTaiKhoan_QuanLy uc_QLTK = new UC_QLTaiKhoan_QuanLy();
         public QuanLy()
         {
             InitializeComponent();

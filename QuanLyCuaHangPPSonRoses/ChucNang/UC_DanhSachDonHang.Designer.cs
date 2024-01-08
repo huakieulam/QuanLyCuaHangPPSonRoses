@@ -34,6 +34,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachDonHang));
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dgvDSSPDonHang = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPhanLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
@@ -48,12 +54,7 @@
             this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnChinhSua = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPhanLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSPDonHang)).BeginInit();
             this.panel3.SuspendLayout();
@@ -137,6 +138,64 @@
             this.dgvDSSPDonHang.ThemeStyle.RowsStyle.Height = 28;
             this.dgvDSSPDonHang.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSSPDonHang.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // dgvMaSP
+            // 
+            this.dgvMaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvMaSP.FillWeight = 270.958F;
+            this.dgvMaSP.HeaderText = "Mã SP ";
+            this.dgvMaSP.MinimumWidth = 15;
+            this.dgvMaSP.Name = "dgvMaSP";
+            this.dgvMaSP.ReadOnly = true;
+            this.dgvMaSP.Width = 134;
+            // 
+            // dgvTenSP
+            // 
+            this.dgvTenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvTenSP.FillWeight = 177.3223F;
+            this.dgvTenSP.HeaderText = "Tên SP";
+            this.dgvTenSP.MinimumWidth = 8;
+            this.dgvTenSP.Name = "dgvTenSP";
+            this.dgvTenSP.ReadOnly = true;
+            // 
+            // dgvPhanLoai
+            // 
+            this.dgvPhanLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvPhanLoai.FillWeight = 0.4779057F;
+            this.dgvPhanLoai.HeaderText = "Loại";
+            this.dgvPhanLoai.MinimumWidth = 8;
+            this.dgvPhanLoai.Name = "dgvPhanLoai";
+            this.dgvPhanLoai.ReadOnly = true;
+            this.dgvPhanLoai.Width = 103;
+            // 
+            // dgvSL
+            // 
+            this.dgvSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvSL.FillWeight = 0.2443835F;
+            this.dgvSL.HeaderText = "SL";
+            this.dgvSL.MinimumWidth = 8;
+            this.dgvSL.Name = "dgvSL";
+            this.dgvSL.ReadOnly = true;
+            this.dgvSL.Width = 83;
+            // 
+            // dgvGia
+            // 
+            this.dgvGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvGia.FillWeight = 53.14929F;
+            this.dgvGia.HeaderText = "Giá";
+            this.dgvGia.MinimumWidth = 8;
+            this.dgvGia.Name = "dgvGia";
+            this.dgvGia.ReadOnly = true;
+            this.dgvGia.Width = 92;
+            // 
+            // dgvTong
+            // 
+            this.dgvTong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvTong.FillWeight = 122.0227F;
+            this.dgvTong.HeaderText = "Tổng";
+            this.dgvTong.MinimumWidth = 8;
+            this.dgvTong.Name = "dgvTong";
+            this.dgvTong.ReadOnly = true;
             // 
             // panel3
             // 
@@ -225,6 +284,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lblTongDonHang);
+            this.panel2.Controls.Add(this.btnInHoaDon);
             this.panel2.Controls.Add(this.btnThanhToan);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnChinhSua);
@@ -287,7 +347,7 @@
             this.btnThanhToan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThanhToan.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnThanhToan.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThanhToan.Location = new System.Drawing.Point(496, 85);
+            this.btnThanhToan.Location = new System.Drawing.Point(422, 85);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(297, 48);
             this.btnThanhToan.TabIndex = 8;
@@ -295,6 +355,7 @@
             this.btnThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThanhToan.TextOffset = new System.Drawing.Point(5, -1);
             this.btnThanhToan.UseTransparentBackground = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnXoa
             // 
@@ -345,63 +406,32 @@
             this.btnChinhSua.UseTransparentBackground = true;
             this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
             // 
-            // dgvMaSP
+            // btnInHoaDon
             // 
-            this.dgvMaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvMaSP.FillWeight = 270.958F;
-            this.dgvMaSP.HeaderText = "Mã SP ";
-            this.dgvMaSP.MinimumWidth = 15;
-            this.dgvMaSP.Name = "dgvMaSP";
-            this.dgvMaSP.ReadOnly = true;
-            this.dgvMaSP.Width = 134;
-            // 
-            // dgvTenSP
-            // 
-            this.dgvTenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvTenSP.FillWeight = 177.3223F;
-            this.dgvTenSP.HeaderText = "Tên SP";
-            this.dgvTenSP.MinimumWidth = 8;
-            this.dgvTenSP.Name = "dgvTenSP";
-            this.dgvTenSP.ReadOnly = true;
-            // 
-            // dgvPhanLoai
-            // 
-            this.dgvPhanLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvPhanLoai.FillWeight = 0.4779057F;
-            this.dgvPhanLoai.HeaderText = "Loại";
-            this.dgvPhanLoai.MinimumWidth = 8;
-            this.dgvPhanLoai.Name = "dgvPhanLoai";
-            this.dgvPhanLoai.ReadOnly = true;
-            this.dgvPhanLoai.Width = 103;
-            // 
-            // dgvSL
-            // 
-            this.dgvSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvSL.FillWeight = 0.2443835F;
-            this.dgvSL.HeaderText = "SL";
-            this.dgvSL.MinimumWidth = 8;
-            this.dgvSL.Name = "dgvSL";
-            this.dgvSL.ReadOnly = true;
-            this.dgvSL.Width = 83;
-            // 
-            // dgvGia
-            // 
-            this.dgvGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvGia.FillWeight = 53.14929F;
-            this.dgvGia.HeaderText = "Giá";
-            this.dgvGia.MinimumWidth = 8;
-            this.dgvGia.Name = "dgvGia";
-            this.dgvGia.ReadOnly = true;
-            this.dgvGia.Width = 92;
-            // 
-            // dgvTong
-            // 
-            this.dgvTong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvTong.FillWeight = 122.0227F;
-            this.dgvTong.HeaderText = "Tổng";
-            this.dgvTong.MinimumWidth = 8;
-            this.dgvTong.Name = "dgvTong";
-            this.dgvTong.ReadOnly = true;
+            this.btnInHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInHoaDon.BackColor = System.Drawing.Color.Transparent;
+            this.btnInHoaDon.BorderRadius = 10;
+            this.btnInHoaDon.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnInHoaDon.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnInHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnInHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnInHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnInHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnInHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(56)))), ((int)(((byte)(145)))));
+            this.btnInHoaDon.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnInHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnInHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.Image")));
+            this.btnInHoaDon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnInHoaDon.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnInHoaDon.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnInHoaDon.Location = new System.Drawing.Point(725, 85);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(271, 48);
+            this.btnInHoaDon.TabIndex = 8;
+            this.btnInHoaDon.Text = "In hóa đơn";
+            this.btnInHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnInHoaDon.TextOffset = new System.Drawing.Point(5, -1);
+            this.btnInHoaDon.UseTransparentBackground = true;
             // 
             // UC_DanhSachDonHang
             // 
@@ -444,5 +474,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSL;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTong;
+        private Guna.UI2.WinForms.Guna2Button btnInHoaDon;
     }
 }

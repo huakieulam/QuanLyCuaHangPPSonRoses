@@ -107,6 +107,7 @@
             // 
             this.btnThemSanPham.BackColor = System.Drawing.Color.Transparent;
             this.btnThemSanPham.BorderRadius = 10;
+            this.btnThemSanPham.BorderThickness = 1;
             this.btnThemSanPham.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnThemSanPham.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnThemSanPham.CheckedState.ForeColor = System.Drawing.Color.Black;
@@ -123,7 +124,7 @@
             this.btnThemSanPham.ImageSize = new System.Drawing.Size(25, 25);
             this.btnThemSanPham.Location = new System.Drawing.Point(19, 115);
             this.btnThemSanPham.Name = "btnThemSanPham";
-            this.btnThemSanPham.Size = new System.Drawing.Size(181, 48);
+            this.btnThemSanPham.Size = new System.Drawing.Size(165, 48);
             this.btnThemSanPham.TabIndex = 5;
             this.btnThemSanPham.Text = "Thêm";
             this.btnThemSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
