@@ -113,12 +113,13 @@
             this.txtXNMatKhau.Location = new System.Drawing.Point(267, 179);
             this.txtXNMatKhau.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtXNMatKhau.Name = "txtXNMatKhau";
-            this.txtXNMatKhau.PasswordChar = '\0';
+            this.txtXNMatKhau.PasswordChar = '●';
             this.txtXNMatKhau.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtXNMatKhau.PlaceholderText = "";
             this.txtXNMatKhau.SelectedText = "";
             this.txtXNMatKhau.Size = new System.Drawing.Size(349, 48);
             this.txtXNMatKhau.TabIndex = 2;
+            this.txtXNMatKhau.UseSystemPasswordChar = true;
             // 
             // guna2Elipse7
             // 
@@ -165,12 +166,13 @@
             this.txtNhapMK.Location = new System.Drawing.Point(267, 117);
             this.txtNhapMK.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtNhapMK.Name = "txtNhapMK";
-            this.txtNhapMK.PasswordChar = '\0';
+            this.txtNhapMK.PasswordChar = '●';
             this.txtNhapMK.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtNhapMK.PlaceholderText = "";
             this.txtNhapMK.SelectedText = "";
             this.txtNhapMK.Size = new System.Drawing.Size(349, 48);
             this.txtNhapMK.TabIndex = 1;
+            this.txtNhapMK.UseSystemPasswordChar = true;
             this.txtNhapMK.Leave += new System.EventHandler(this.txtNhapMK_Leave);
             // 
             // guna2Elipse9

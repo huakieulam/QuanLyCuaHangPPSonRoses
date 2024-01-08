@@ -96,6 +96,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
                 panelHienThiDH.Controls.Add(donHang);
             }
+
         }
     }
 }

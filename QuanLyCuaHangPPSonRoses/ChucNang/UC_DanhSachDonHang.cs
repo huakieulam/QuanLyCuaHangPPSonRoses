@@ -117,5 +117,18 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         private void UC_DanhSachDonHang_Load(object sender, EventArgs e)
         {
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            ThanhToan thanhToan = new ThanhToan(this);
+            thanhToan.TongTien = TONGGIA;
+            thanhToan.Show();
+        }
+        public void CapNhatTrangThaiThanhToan()
+        {
+            btnThanhToan.Text = "Đã thanh toán";
+            btnThanhToan.Enabled = false;
+            btnThanhToan.Visible = true;
+        }
     }
 }

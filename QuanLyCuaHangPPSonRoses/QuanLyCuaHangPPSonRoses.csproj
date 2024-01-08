@@ -118,6 +118,12 @@
     <Compile Include="ChucNang\DanhSachDonHang.Designer.cs">
       <DependentUpon>DanhSachDonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\ThemSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="ChucNang\UC_QLTaiKhoan.Designer.cs">
       <DependentUpon>UC_QLTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChucNang\UC_QLTaiKhoan_QuanLy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChucNang\UC_QLTaiKhoan_QuanLy.Designer.cs">
+      <DependentUpon>UC_QLTaiKhoan_QuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang\UC_SanPham.cs">
       <SubType>UserControl</SubType>
@@ -219,6 +231,9 @@
     <EmbeddedResource Include="ChucNang\DanhSachDonHang.resx">
       <DependentUpon>DanhSachDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\ThemSanPham.resx">
       <DependentUpon>ThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\UC_QLTaiKhoan.resx">
       <DependentUpon>UC_QLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\UC_QLTaiKhoan_QuanLy.resx">
+      <DependentUpon>UC_QLTaiKhoan_QuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\UC_SanPham.resx">
       <DependentUpon>UC_SanPham.cs</DependentUpon>
