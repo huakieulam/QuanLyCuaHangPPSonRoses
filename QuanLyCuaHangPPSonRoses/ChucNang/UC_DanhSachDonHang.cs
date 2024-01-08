@@ -30,7 +30,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         private decimal gia;
         private decimal tong;
         private decimal tongGia;
-
+        private string trangThai;
         public string MASP
         {
             get { return masp; }
@@ -109,6 +109,11 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             set { email = value; lblEmail.Text = value; }
         }
         public int MaDonHang { get; set; }
+        public string TRANGTHAI
+        {
+            get { return trangThai; }
+            set { trangThai = value; btnThanhToan.Text = value; }
+        }
         private void btnChinhSua_Click(object sender, EventArgs e)
         {
 
@@ -116,18 +121,43 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
         private void UC_DanhSachDonHang_Load(object sender, EventArgs e)
         {
-            
+            string connectionString = "Server=localhost;Port=5432;Username=postgres;Password=123;Database=postgres";
+            string query = "SELECT trangthai FROM donhang WHERE maDH = @maDH";
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
+                command.Parameters.AddWithValue("@maDH", MaDonHang);
+                object result = command.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    string trangThai = result.ToString();
+
+                    if (trangThai == "Đã thanh toán")
+                    {
+                        btnThanhToan.Visible = false;
+                    }
+                    else
+                    {
+                        btnThanhToan.Visible = true;
+                    }
+                }
+
+                connection.Close();
+            }
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            ThanhToan thanhToan = new ThanhToan(this);
-            thanhToan.TongTien = TONGGIA;
-            thanhToan.Show();
-
+                ThanhToan thanhToan = new ThanhToan(this);
+                thanhToan.TongTien = TONGGIA;
+                thanhToan.Show();
             
+
         }
-        
         public void CapNhatTrangThaiThanhToan(int maDH)
         {
             btnThanhToan.Text = "Đã thanh toán";
