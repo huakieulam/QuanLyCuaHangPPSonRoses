@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using DevExpress.XtraEditors.Mask.Design;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -168,13 +169,14 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
             MessageBox.Show("Tạo đơn hàng thành công!");
         }
+        public string loaiNguoiDatHang;
         private void LuuThongTinDonHang()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = "INSERT INTO donhang (tenKH, email, sdt, ngay, tongDH, trangthai) VALUES (@tenKH, @email, @sdt, @ngay, @tongDH, @trangthai)";
+                string query = "INSERT INTO donhang (tenKH, email, sdt, ngay, tongDH, nguoidat, trangthai) VALUES (@tenKH, @email, @sdt, @ngay, @tongDH, @nguoidat, @trangthai)";
                 string trangthai = "Chưa thanh toán";
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
@@ -183,6 +185,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                     command.Parameters.AddWithValue("@sdt", txtSDT.Text);
                     command.Parameters.AddWithValue("@ngay", DateTime.Now);
                     command.Parameters.AddWithValue("@tongDH", Convert.ToDecimal(lblTongDonHang.Text));
+                    command.Parameters.AddWithValue("@nguoidat", loaiNguoiDatHang);
                     command.Parameters.AddWithValue("@trangthai", trangthai);
                     command.ExecuteNonQuery();
                 }
@@ -218,9 +221,20 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                         
                     }
                 }
-            }
-            
+                query = "UPDATE sanpham SET sl = sl - @soluong WHERE masp = @masp";
+                foreach (DataGridViewRow row in dgvTaoDonHang.Rows)
+                {
+                    string maSP = row.Cells["dgvMaSP"].Value.ToString();
+                    int soLuongMua = Convert.ToInt32(row.Cells["dgvSL"].Value);
 
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@soluong", soLuongMua);
+                        command.Parameters.AddWithValue("@masp", maSP);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
