@@ -17,6 +17,7 @@ namespace QuanLyCuaHangPPSonRoses
         public KhachHang()
         {
             InitializeComponent();
+            Load += KhachHang_Load;
         }
         UC_DatHang uc_DatHang = new UC_DatHang();
         UC_TrangChu uc_TrangChu = new UC_TrangChu();
@@ -26,6 +27,7 @@ namespace QuanLyCuaHangPPSonRoses
             panel2.Controls.Clear();
             panel2.Controls.Add(uc_TrangChu);
             uc_TrangChu.Dock = DockStyle.Fill;
+            uc_DatHang.loaiNguoiDatHang = "Khách hàng";
         }
         private void btnDatHang_Click(object sender, EventArgs e)
         {

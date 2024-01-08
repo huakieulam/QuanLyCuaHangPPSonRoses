@@ -17,7 +17,10 @@ namespace QuanLyCuaHangPPSonRoses
         public NhanVien()
         {
             InitializeComponent();
+            Load += NhanVien_Load;
         }
+        private string loaiNguoiDH;
+
         UC_TrangChu uc_TrangChu = new UC_TrangChu();
         UC_QLTaiKhoan uc_QLTaiKhoan = new UC_QLTaiKhoan();
         UC_DatHang uc_DatHang = new UC_DatHang();
@@ -33,6 +36,7 @@ namespace QuanLyCuaHangPPSonRoses
             panel2.Controls.Clear();
             panel2.Controls.Add(uc_TrangChu);
             uc_TrangChu.Dock = DockStyle.Fill;
+            uc_DatHang.loaiNguoiDatHang = "Nhân viên";
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)
