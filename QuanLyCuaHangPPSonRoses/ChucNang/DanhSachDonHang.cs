@@ -21,10 +21,10 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
             this.Close();
         }
-
         private void DanhSachDonHang_Load(object sender, EventArgs e)
         {
             HienThiDonHang();
+            
         }
         private void HienThiDonHang()
         {
@@ -81,6 +81,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                 donHang.EMAIL = order.Value.First().EMAIL;
                 donHang.TONGGIA = order.Value.First().TONGGIA;
 
+
                 foreach (UC_DanhSachDonHang sanPham in order.Value)
                 {
                     DataGridViewRow row = new DataGridViewRow();
@@ -92,11 +93,12 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                     row.Cells[4].Value = sanPham.GIA;
                     row.Cells[5].Value = sanPham.TONG;
                     donHang.dgvDSSPDonHang.Rows.Add(row);
+
                 }
 
                 panelHienThiDH.Controls.Add(donHang);
             }
-
+            
         }
     }
 }

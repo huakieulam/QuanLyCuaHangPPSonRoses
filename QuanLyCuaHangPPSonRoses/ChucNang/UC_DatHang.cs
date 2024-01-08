@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -157,7 +158,8 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             DanhSachDonHang danhSachDonHang = new DanhSachDonHang();
             danhSachDonHang.Show();
         }
-        private void btnTaoDonHang_Click(object sender, EventArgs e)
+
+            private void btnTaoDonHang_Click(object sender, EventArgs e)
         {
             LuuThongTinDonHang();
             
