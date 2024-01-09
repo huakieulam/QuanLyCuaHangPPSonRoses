@@ -195,16 +195,17 @@
             this.cmbPhanLoai.Items.AddRange(new object[] {
             "Sơn nội thất",
             "Sơn ngoại thất"});
-            this.cmbPhanLoai.Location = new System.Drawing.Point(410, 332);
+            this.cmbPhanLoai.Location = new System.Drawing.Point(410, 59);
             this.cmbPhanLoai.Name = "cmbPhanLoai";
             this.cmbPhanLoai.Size = new System.Drawing.Size(316, 36);
             this.cmbPhanLoai.TabIndex = 4;
+            this.cmbPhanLoai.SelectedIndexChanged += new System.EventHandler(this.cmbPhanLoai_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(404, 109);
+            this.label4.Location = new System.Drawing.Point(404, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 35);
             this.label4.TabIndex = 20;
@@ -224,7 +225,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(408, 204);
+            this.label5.Location = new System.Drawing.Point(408, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 35);
             this.label5.TabIndex = 21;
@@ -234,7 +235,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(404, 300);
+            this.label3.Location = new System.Drawing.Point(404, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 35);
             this.label3.TabIndex = 22;
@@ -244,7 +245,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(404, 19);
+            this.label1.Location = new System.Drawing.Point(404, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 35);
             this.label1.TabIndex = 19;
@@ -273,6 +274,7 @@
             this.txtGia.SelectedText = "";
             this.txtGia.Size = new System.Drawing.Size(234, 48);
             this.txtGia.TabIndex = 5;
+            this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGia_KeyPress);
             // 
             // txtSL
             // 
@@ -288,7 +290,7 @@
             this.txtSL.Font = new System.Drawing.Font("Times New Roman", 16F);
             this.txtSL.ForeColor = System.Drawing.Color.Black;
             this.txtSL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSL.Location = new System.Drawing.Point(410, 240);
+            this.txtSL.Location = new System.Drawing.Point(410, 330);
             this.txtSL.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtSL.Name = "txtSL";
             this.txtSL.PasswordChar = '\0';
@@ -297,6 +299,7 @@
             this.txtSL.SelectedText = "";
             this.txtSL.Size = new System.Drawing.Size(316, 48);
             this.txtSL.TabIndex = 3;
+            this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSL_KeyPress);
             // 
             // txtTenSP
             // 
@@ -312,7 +315,7 @@
             this.txtTenSP.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenSP.ForeColor = System.Drawing.Color.Black;
             this.txtTenSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenSP.Location = new System.Drawing.Point(410, 145);
+            this.txtTenSP.Location = new System.Drawing.Point(410, 235);
             this.txtTenSP.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.PasswordChar = '\0';
@@ -321,6 +324,7 @@
             this.txtTenSP.SelectedText = "";
             this.txtTenSP.Size = new System.Drawing.Size(316, 48);
             this.txtTenSP.TabIndex = 2;
+            this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // txtMaSP
             // 
@@ -337,7 +341,7 @@
             this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSP.ForeColor = System.Drawing.Color.Black;
             this.txtMaSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaSP.Location = new System.Drawing.Point(410, 54);
+            this.txtMaSP.Location = new System.Drawing.Point(410, 144);
             this.txtMaSP.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.PasswordChar = '\0';
