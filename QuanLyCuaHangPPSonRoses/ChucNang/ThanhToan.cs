@@ -35,6 +35,28 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             {
                 txtTienTraLai.Text = string.Empty;
             }
+            /*if (!string.IsNullOrEmpty(txtTienThu.Text))
+            {
+                decimal tongTien = decimal.Parse(txtTongTien.Text);
+                decimal tienThu = decimal.Parse(txtTienThu.Text);
+
+                decimal tienTra = tienThu - tongTien;
+                txtTienTraLai.Text = tienTra.ToString();
+
+                if (tienThu == tongTien)
+                {
+                    btnXacNhan.Enabled = true;
+                }
+                else
+                {
+                    btnXacNhan.Enabled = false;
+                }
+            }
+            else
+            {
+                txtTienTraLai.Text = string.Empty;
+                btnXacNhan.Enabled = false;
+            }*/
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -50,11 +72,27 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
         {
             if (uc_DSDH != null)
             {
-                int maDH = uc_DSDH.MaDonHang;
+                if (!string.IsNullOrEmpty(txtTienThu.Text))
+                {
+                    int maDH = uc_DSDH.MaDonHang;
+                    decimal tongTien = decimal.Parse(txtTongTien.Text);
+                    decimal tienThu = decimal.Parse(txtTienThu.Text);
 
-                uc_DSDH.CapNhatTrangThaiThanhToan(maDH);
+                    if (tienThu >= tongTien)
+                    {
+                        uc_DSDH.CapNhatTrangThaiThanhToan(maDH);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nhập đúng tiền thu.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nhập đúng tiền thu.");
+                }
             }
-            this.Close();
         }
 
         private void txtTienThu_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,5 +102,11 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
                 e.Handled = true;
             }
         }
+
+        private void txtTienThu_TextChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
