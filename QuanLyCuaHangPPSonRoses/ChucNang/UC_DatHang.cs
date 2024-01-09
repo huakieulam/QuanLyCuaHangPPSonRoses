@@ -159,17 +159,23 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             danhSachDonHang.Show();
         }
 
-            private void btnTaoDonHang_Click(object sender, EventArgs e)
+        private void btnTaoDonHang_Click(object sender, EventArgs e)
         {
-            LuuThongTinDonHang();
-            
-            dgvTaoDonHang.Rows.Clear();
-            txtTenKH.Text = "";
-            txtSDT.Text = "";
-            txtEmail.Text = "";
-            lblTongDonHang.Text = "";
+            if (dgvTaoDonHang.Rows.Count > 0 && !string.IsNullOrEmpty(txtTenKH.Text) && !string.IsNullOrEmpty(txtSDT.Text) && !string.IsNullOrEmpty(txtEmail.Text))
+            {
+                LuuThongTinDonHang();
+                dgvTaoDonHang.Rows.Clear();
+                txtTenKH.Text = "";
+                txtSDT.Text = "";
+                txtEmail.Text = "";
+                lblTongDonHang.Text = "";
 
-            MessageBox.Show("Tạo đơn hàng thành công!");
+                MessageBox.Show("Tạo đơn hàng thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+            }
         }
         public string loaiNguoiDatHang;
         private void LuuThongTinDonHang()

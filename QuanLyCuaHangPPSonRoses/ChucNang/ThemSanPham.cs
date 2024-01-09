@@ -162,5 +162,44 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             get { return txtMaSP.ReadOnly; }
             set { txtMaSP.ReadOnly = value; }
         }
+
+        private void cmbPhanLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string prefix = "";
+            if (cmbPhanLoai.SelectedItem.ToString() == "Sơn nội thất")
+            {
+                prefix = "NT_";
+            }
+            else if (cmbPhanLoai.SelectedItem.ToString() == "Sơn ngoại thất")
+            {
+                prefix = "NGT_";
+            }
+
+            txtMaSP.Text = prefix;
+        }
+
+        private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

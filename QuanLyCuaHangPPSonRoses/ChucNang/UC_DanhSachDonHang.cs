@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.Gesture;
 using DevExpress.XtraEditors.Mask.Design;
+using DevExpress.XtraReports.UI;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -176,6 +177,11 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
 
                 connection.Close();
             }
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
