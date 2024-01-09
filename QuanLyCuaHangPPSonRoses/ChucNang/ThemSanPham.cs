@@ -163,20 +163,7 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             set { txtMaSP.ReadOnly = value; }
         }
 
-        private void cmbPhanLoai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string prefix = "";
-            if (cmbPhanLoai.SelectedItem.ToString() == "Sơn nội thất")
-            {
-                prefix = "NT_";
-            }
-            else if (cmbPhanLoai.SelectedItem.ToString() == "Sơn ngoại thất")
-            {
-                prefix = "NGT_";
-            }
-
-            txtMaSP.Text = prefix;
-        }
+        
 
         private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -199,7 +199,6 @@
             this.cmbPhanLoai.Name = "cmbPhanLoai";
             this.cmbPhanLoai.Size = new System.Drawing.Size(316, 36);
             this.cmbPhanLoai.TabIndex = 4;
-            this.cmbPhanLoai.SelectedIndexChanged += new System.EventHandler(this.cmbPhanLoai_SelectedIndexChanged);
             // 
             // label4
             // 

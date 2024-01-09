@@ -167,6 +167,7 @@
             this.txtTienThu.SelectedText = "";
             this.txtTienThu.Size = new System.Drawing.Size(385, 49);
             this.txtTienThu.TabIndex = 22;
+            this.txtTienThu.TextChanged += new System.EventHandler(this.txtTienThu_TextChanged_1);
             this.txtTienThu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTienThu_KeyPress);
             // 
             // label2

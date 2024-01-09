@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -271,6 +272,51 @@ namespace QuanLyCuaHangPPSonRoses.ChucNang
             lblTongDonHang.Text = "";
 
             HienThiSP();
+        }
+
+        private void txtTenKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (txtSDT.Text.Length == 10 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '@')
+            {
+                if (!ktDinhDangMail(txtEmail.Text + e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                }
+            }
+        }
+        private bool ktDinhDangMail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9_.+-]+@gmail\.com$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(email);
         }
     }
 }
